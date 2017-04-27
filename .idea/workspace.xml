@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="158bb97f-dae4-4929-95ed-26e76409481c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_41_bin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/PreRegClient.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/Course.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/MSG.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/NetworkManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/NetworkThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/Packet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/UICore.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/Core/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegClient/src/UI/MainUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/PreRegServer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/ClientList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/Database.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/MSG.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/Packet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PreRegServer/src/Core/Session.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-    </list>
+    <list default="true" id="158bb97f-dae4-4929-95ed-26e76409481c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
