@@ -12,3 +12,7 @@
 hs_err_pid*
 *.xml
 *.iml
+.idea/
+PreRegServer/PreRegServer.iml
+PreRegClient/PreRegClient.iml
+
