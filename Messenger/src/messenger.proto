@@ -1,0 +1,17 @@
+package messengerproto;
+
+option java_package = "com.messenger.protobuf";
+option java_outer_classname = "MessengerProto";
+
+message MessageType {
+    required string type = 1;
+}
+
+message MessageHeader {
+    required int32 code = 1 [default = 0];
+    required MessageType messageType = 2;
+}
+
+message EmptyMessage {
+
+}
