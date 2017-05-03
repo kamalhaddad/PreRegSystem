@@ -1,16 +1,22 @@
 package UI;
 
 import Core.*;
+import com.prereg.base.Course;
+import com.prereg.base.User;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 import static Core.UICore.switchUI;
 
-public class MainUI extends JFrame implements MSG
+public class MainUI extends JFrame
 
 {
+
+    private PreRegClientSession clientSession;
+
     private static JPanel loginPanel;
     private static JPanel coursePanel;
     private static JPanel messagePanel;
@@ -18,7 +24,6 @@ public class MainUI extends JFrame implements MSG
     
     /* Menu */
     private static JMenuBar menuBar;
-
 
     private static boolean isLoginUI;
     private static boolean isCourseUI;
@@ -71,6 +76,9 @@ public class MainUI extends JFrame implements MSG
 
     public MainUI()
     {
+
+        clientSession = PreRegClientSession.getSession();
+
         setTitle("Login");
         setLayout(null);
         
@@ -110,7 +118,7 @@ public class MainUI extends JFrame implements MSG
           CRNLabel = new JLabel("CRN: ");
           TimeChangeLabel = new JLabel("Requested Days and Time: ");
           TimeChangeTextField = new JTextField();
-          btnTimeChangeRequest = new JButton("Time Change Request");
+          btnTimeChangeRequest = new JButton("Time Change MessageWrapper");
           ProfUNameLabel = new JLabel("Instructor User Name: ");
           ProfUNameTextField = new JTextField();
 
@@ -118,8 +126,8 @@ public class MainUI extends JFrame implements MSG
         courseList = new JList(model);
         courseListPane = new JScrollPane(courseList);
         btnMessages = new JButton("Messages");
-        btnCapacityRequest = new JButton("Capacity Request");
-        btnCourseRequest = new JButton("Request Course");
+        btnCapacityRequest = new JButton("Capacity MessageWrapper");
+        btnCourseRequest = new JButton("MessageWrapper Course");
         CourseRequestTextField = new JTextField();
         CourseRequestLabel = new JLabel("New Course Name (e.g: XXXX 123): ");
         
@@ -219,15 +227,15 @@ public class MainUI extends JFrame implements MSG
 
     public void setUserInfo(int id, String username, String title){
 
-        User.init(id, username, title);
-        lblUName.setText(User.getUsername());
+  //      User.init(id, username, title);
+  //      lblUName.setText(User.getUsername());
 
         updateUITitle();
     }
     
     public void updateUITitle()
     {
-        setTitle(User.getUITitle());
+   //     setTitle(User.getUITitle());
     }
     
     public void enableLoginInput(boolean enable)
@@ -270,7 +278,12 @@ public class MainUI extends JFrame implements MSG
             return;
         }
 
-        NetworkManager.login(txtUsername.getText(), new String(txtPassword.getPassword()));
+     //   NetworkManager.login(txtUsername.getText(), new String(txtPassword.getPassword()));
+        try {
+            clientSession.init(txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         AddCourseInterface();
     }
     
@@ -308,10 +321,10 @@ public class MainUI extends JFrame implements MSG
             if(e.getSource().equals(btnCapacityRequest)){
                 if(isNumeric(CRNTextField.getText().toString())) {
                     int CRN = Integer.parseInt(CRNTextField.getText().toString().trim());
-
-                    Packet p = new Packet(CMSG_CAPACITY_REQUEST);
-                    p.put(CRN);
-                    NetworkManager.SendPacket(p);
+//
+//                    Packet p = new Packet(CMSG_CAPACITY_REQUEST);
+//                    p.put(CRN);
+//                    NetworkManager.SendPacket(p);
                 }
             }
 
@@ -320,10 +333,10 @@ public class MainUI extends JFrame implements MSG
                     String times = TimeChangeTextField.getText();
                     int CRN = Integer.parseInt(CRNTextField.getText().toString().trim());
 
-                    Packet p = new Packet(CMSG_TIME_REQUEST);
-                    p.put(CRN);
-                    p.put(times);
-                    NetworkManager.SendPacket(p);
+//                    Packet p = new Packet(CMSG_TIME_REQUEST);
+//                    p.put(CRN);
+//                    p.put(times);
+//                    NetworkManager.SendPacket(p);
                 }
             }
 
@@ -332,10 +345,10 @@ public class MainUI extends JFrame implements MSG
 
                     String courseReq = CourseRequestTextField.getText();
                     String instructorUserName = ProfUNameTextField.getText();
-                    Packet p = new Packet(CMSG_COURSE_REQUEST);
-                    p.put(courseReq);
-                    p.put(instructorUserName);
-                    NetworkManager.SendPacket(p);
+//                    Packet p = new Packet(CMSG_COURSE_REQUEST);
+//                    p.put(courseReq);
+//                    p.put(instructorUserName);
+//                    NetworkManager.SendPacket(p);
                 }
             }
 
@@ -360,7 +373,7 @@ public class MainUI extends JFrame implements MSG
         {
             // Only logout when client is logged in
             if (!isLoginUI)
-                NetworkManager.SendPacket(new Packet(CMSG_LOGOUT));
+//                NetworkManager.SendPacket(new Packet(CMSG_LOGOUT));
             
             System.exit(0);
         }
@@ -393,7 +406,6 @@ public class MainUI extends JFrame implements MSG
                 try { Thread.sleep(2); }
                 catch(Exception e) {}
             }
-
         }
     }
 }

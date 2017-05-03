@@ -25,19 +25,20 @@ public class Messenger {
 
     public void sendMessage(MessageWrapper messageWrapper)
             throws IOException {
-        messageWrapper.getHeader().writeTo(sendStream);
-        messageWrapper.getMessage().writeTo(sendStream);
+        messageWrapper.getHeader().writeDelimitedTo(sendStream);
+        messageWrapper.getMessage().writeDelimitedTo(sendStream);
+        sendStream.flush();
     }
 
     public MessageWrapper receiveMessage()
             throws IOException, IllegalStateException {
-        MessengerProto.MessageHeader header = MessengerProto.MessageHeader.parseFrom(receiveStream);
+        MessengerProto.MessageHeader header = MessengerProto.MessageHeader.parseDelimitedFrom(receiveStream);
         MessengerProto.MessageType messageType = header.getMessageType();
         MessageWrapper message = messageFactory.createMessage(messageType);
         if (message == null) {
             throw new IllegalStateException("unknown message");
         }
-        message.setMessage(message.getMessage().getParserForType().parseFrom(receiveStream));
+        message.setMessage(message.getMessage().getParserForType().parseDelimitedFrom(receiveStream));
         return message;
     }
 

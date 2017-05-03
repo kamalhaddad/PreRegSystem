@@ -8,7 +8,7 @@ message MessageType {
 }
 
 message MessageHeader {
-    required int32 code = 1 [default = 0];
+    optional int32 code = 1 [default = 0];
     required MessageType messageType = 2;
 }
 

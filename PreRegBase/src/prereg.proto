@@ -1,0 +1,44 @@
+package base;
+
+option java_package = "com.prereg.base.data";
+option java_outer_classname = "PreRegProto";
+
+message LoginRequestData {
+    required string username = 1;
+    required string password = 2;
+}
+
+message LoginResponseData {
+    required UserData userData = 1;
+}
+
+message UserData {
+    enum Access {
+        ADMIN = 0;
+        PROFSSOR = 1;
+        STUDENT = 2;
+    }
+    required int32 id = 1;
+    required string name = 2;
+    required string username = 3;
+    required Access access = 4;
+    optional string email = 5;
+}
+
+message CourseData {
+    required int32 CRN = 1;
+    required int32 sectionNumber = 2;
+    required UserData instructor = 3;
+    required string courseName = 4;
+    required string time = 5;
+    required string classRoom = 6;
+    required int32 capacity = 7;
+    required int32 max_capacity = 8;
+}
+
+message GetCoursesRequestData {
+    //TODO add query options such as department/professor
+    repeated CourseData courses = 2;
+}
+
+

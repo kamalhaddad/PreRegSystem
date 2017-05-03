@@ -9,17 +9,20 @@ public class MessageWrapper {
     private MessengerProto.MessageHeader header;
     private Message message;
 
-    public MessageWrapper(MessengerProto.MessageType messageType, Message message) {
-        this.header = MessengerProto.MessageHeader.newBuilder().setMessageType(messageType).build();
+    private MessageWrapper(MessengerProto.MessageHeader header, Message message) {
+        this.header = header;
         this.message = message;
+    }
+
+    public MessageWrapper(MessengerProto.MessageType messageType, Message message) {
+        this(MessengerProto.MessageHeader.newBuilder().setMessageType(messageType).build(), message);
     }
 
     public MessageWrapper(int messageCode,
                           MessengerProto.MessageType messageType,
                           Message message) {
-        this.header = MessengerProto.MessageHeader.newBuilder()
-                .setMessageType(messageType).setCode(messageCode).build();
-        this.message = message;
+        this(MessengerProto.MessageHeader.newBuilder()
+                .setMessageType(messageType).setCode(messageCode).build(), message);
     }
 
     public int getMessageCode() {

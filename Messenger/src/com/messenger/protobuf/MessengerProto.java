@@ -490,13 +490,13 @@ public final class MessengerProto {
   public interface MessageHeaderOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required int32 code = 1 [default = 0];
+    // optional int32 code = 1 [default = 0];
     /**
-     * <code>required int32 code = 1 [default = 0];</code>
+     * <code>optional int32 code = 1 [default = 0];</code>
      */
     boolean hasCode();
     /**
-     * <code>required int32 code = 1 [default = 0];</code>
+     * <code>optional int32 code = 1 [default = 0];</code>
      */
     int getCode();
 
@@ -623,17 +623,17 @@ public final class MessengerProto {
     }
 
     private int bitField0_;
-    // required int32 code = 1 [default = 0];
+    // optional int32 code = 1 [default = 0];
     public static final int CODE_FIELD_NUMBER = 1;
     private int code_;
     /**
-     * <code>required int32 code = 1 [default = 0];</code>
+     * <code>optional int32 code = 1 [default = 0];</code>
      */
     public boolean hasCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 code = 1 [default = 0];</code>
+     * <code>optional int32 code = 1 [default = 0];</code>
      */
     public int getCode() {
       return code_;
@@ -670,10 +670,6 @@ public final class MessengerProto {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasCode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasMessageType()) {
         memoizedIsInitialized = 0;
         return false;
@@ -904,10 +900,6 @@ public final class MessengerProto {
       }
 
       public final boolean isInitialized() {
-        if (!hasCode()) {
-          
-          return false;
-        }
         if (!hasMessageType()) {
           
           return false;
@@ -938,22 +930,22 @@ public final class MessengerProto {
       }
       private int bitField0_;
 
-      // required int32 code = 1 [default = 0];
+      // optional int32 code = 1 [default = 0];
       private int code_ ;
       /**
-       * <code>required int32 code = 1 [default = 0];</code>
+       * <code>optional int32 code = 1 [default = 0];</code>
        */
       public boolean hasCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 code = 1 [default = 0];</code>
+       * <code>optional int32 code = 1 [default = 0];</code>
        */
       public int getCode() {
         return code_;
       }
       /**
-       * <code>required int32 code = 1 [default = 0];</code>
+       * <code>optional int32 code = 1 [default = 0];</code>
        */
       public Builder setCode(int value) {
         bitField0_ |= 0x00000001;
@@ -962,7 +954,7 @@ public final class MessengerProto {
         return this;
       }
       /**
-       * <code>required int32 code = 1 [default = 0];</code>
+       * <code>optional int32 code = 1 [default = 0];</code>
        */
       public Builder clearCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1434,7 +1426,7 @@ public final class MessengerProto {
     java.lang.String[] descriptorData = {
       "\n\035Messenger/src/messenger.proto\022\016messeng" +
       "erproto\"\033\n\013MessageType\022\014\n\004type\030\001 \002(\t\"R\n\r" +
-      "MessageHeader\022\017\n\004code\030\001 \002(\005:\0010\0220\n\013messag" +
+      "MessageHeader\022\017\n\004code\030\001 \001(\005:\0010\0220\n\013messag" +
       "eType\030\002 \002(\0132\033.messengerproto.MessageType" +
       "\"\016\n\014EmptyMessageB(\n\026com.messenger.protob" +
       "ufB\016MessengerProto"
