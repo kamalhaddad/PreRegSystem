@@ -37,7 +37,7 @@ public class NetworkManager implements MSG
             out = new ObjectOutputStream(socket.getOutputStream());
             
             // 5 mins timeout
-            socket.setSoTimeout(5 * 60 * 1000);
+            //socket.setSoTimeout(5 * 60 * 1000);
             
             // If connection is create successfully, send the login detail to the server.
             Packet loginPacket = new Packet(CMSG_LOGIN);

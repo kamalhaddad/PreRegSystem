@@ -37,22 +37,28 @@ public class MainUI extends JFrame implements MSG
     /* Course List Interface */
     private JList courseList;
     private JScrollPane courseListPane;
+    public JComboBox cbSearchBy;
 
-    private JButton btnMessages;
+    //private JButton btnMessages;
     private JButton btnCourses;
 
     private JLabel lblUName;
     private JLabel CRNLabel;
+    private JLabel lblSearch;
+
     private JTextField CRNTextField;
 
     private JButton btnCapacityRequest;
-
+    private JButton btnRefreshSchedule;
 
     public  DefaultListModel model;
     private DefaultListModel model2;
+    public DefaultListModel model3;
 
     private JList messageList;
+    private JList schedList;
     private JScrollPane messageListPane;
+    private JScrollPane schedListPane;
 
     private JLabel lblTitles;
 
@@ -68,6 +74,11 @@ public class MainUI extends JFrame implements MSG
 
     private JTextField ProfUNameTextField;
     private JLabel ProfUNameLabel;
+
+    private JButton btnSearch;
+    private JTextField tfSearch;
+
+    private JLabel lblSched;
 
     public MainUI()
     {
@@ -113,32 +124,50 @@ public class MainUI extends JFrame implements MSG
           btnTimeChangeRequest = new JButton("Time Change Request");
           ProfUNameLabel = new JLabel("Instructor User Name: ");
           ProfUNameTextField = new JTextField();
+          btnRefreshSchedule = new JButton("Refresh Schedule");
 
         model = new DefaultListModel();
         courseList = new JList(model);
         courseListPane = new JScrollPane(courseList);
-        btnMessages = new JButton("Messages");
+        //btnMessages = new JButton("Messages");
         btnCapacityRequest = new JButton("Capacity Request");
-        btnCourseRequest = new JButton("Request Course");
         CourseRequestTextField = new JTextField();
         CourseRequestLabel = new JLabel("New Course Name (e.g: XXXX 123): ");
-        
+        btnCourseRequest = new JButton("Request Course");
+        lblSearch = new JLabel("Search By:");
+        btnSearch = new JButton("Search");
+        String[] searchByStrings = {"CRN","Instructor Username","Course Name", "Department"};
+        cbSearchBy = new JComboBox(searchByStrings);
+        tfSearch = new JTextField();
+        model3 = new DefaultListModel();
+        schedList = new JList(model3);
+        schedListPane = new JScrollPane(schedList);
+        lblSched = new JLabel("Schedule:");
+
         coursePanel.add(CRNTextField);
         coursePanel.add(CRNLabel);
         coursePanel.add(lblUName);
         coursePanel.add(lblTitles);
         coursePanel.add(courseListPane);
-        coursePanel.add(btnMessages);
+        //coursePanel.add(btnMessages);
+        coursePanel.add(lblSearch);
+        coursePanel.add(cbSearchBy);
+        coursePanel.add(btnSearch);
+        coursePanel.add(tfSearch);
 
 
 
         CRNLabel.setBounds(15,40,50,25);
         CRNTextField.setBounds(50, 40,75,25);
         lblUName.setBounds(15,10, 240,25);
-        lblTitles.setBounds(15, 175, 600, 25);
-        courseListPane.setBounds(10, 200, 720, 330);
+        lblTitles.setBounds(15, 205, 600, 25);
+        courseListPane.setBounds(10, 230, 720, 200);
+        schedListPane.setBounds(15,530,250,200);
+        lblSched.setBounds(15,465,100,100);
+        btnRefreshSchedule.setBounds(115,500,150,25);
 
-        btnMessages.setBounds(390, 10, 100, 25);
+
+        //btnMessages.setBounds(390, 10, 100, 25);
         btnCapacityRequest.setBounds(15, 70, 135,25);
 
         TimeChangeLabel.setBounds(15, 100, 185, 25);
@@ -148,9 +177,14 @@ public class MainUI extends JFrame implements MSG
         ProfUNameLabel.setBounds(15,130,175,25);
         ProfUNameTextField.setBounds(200, 130,125,25);
 
-        CourseRequestLabel.setBounds(15, 155, 260, 25);
-        CourseRequestTextField.setBounds(255, 155, 125, 25);
-        btnCourseRequest.setBounds(800, 155, 125, 25);
+        CourseRequestLabel.setBounds(15, 165, 260, 25);
+        CourseRequestTextField.setBounds(255, 165, 125, 25);
+        btnCourseRequest.setBounds(385, 165, 125, 25);
+
+        lblSearch.setBounds(15,440,80,25);
+        cbSearchBy.setBounds(100,440,150,25);
+        tfSearch.setBounds(270,440,150,25);
+        btnSearch.setBounds(430,440,150,25);
 
 
         /* Messages Interface */
@@ -168,7 +202,7 @@ public class MainUI extends JFrame implements MSG
         btnCourses.setBounds(390, 10, 100, 25);
 
         loginPanel.setBounds(230, 0, 550, 500);
-        coursePanel.setBounds(950, 0, 750, 475);
+        coursePanel.setBounds(950, 0, 750, 1000);
         messagePanel.setBounds(1500, 0, 1100, 475);
        
         lblUName.setFont(new Font("sansserif", Font.BOLD, 14));
@@ -187,11 +221,13 @@ public class MainUI extends JFrame implements MSG
         setVisible(true);
         
         btnLogin.addActionListener(actListener);
-        btnMessages.addActionListener(actListener);
+        //btnMessages.addActionListener(actListener);
         btnCourses.addActionListener(actListener);
         btnCapacityRequest.addActionListener(actListener);
         btnTimeChangeRequest.addActionListener(actListener);
         btnCourseRequest.addActionListener(actListener);
+        btnSearch.addActionListener(actListener);
+        btnRefreshSchedule.addActionListener(actListener);
         
         txtUsername.addKeyListener(loginKeyListener);
         txtPassword.addKeyListener(loginKeyListener);
@@ -214,6 +250,9 @@ public class MainUI extends JFrame implements MSG
             coursePanel.add(CourseRequestLabel);
             coursePanel.add(ProfUNameLabel);
             coursePanel.add(ProfUNameTextField);
+            coursePanel.add(schedListPane);
+            coursePanel.add(lblSched);
+            coursePanel.add(btnRefreshSchedule);
         }
     }
 
@@ -295,10 +334,10 @@ public class MainUI extends JFrame implements MSG
         {
             if (e.getSource().equals(btnLogin))
                 login();
-            if(e.getSource().equals(btnMessages)) {
-                isMessageUI = true;
-                switchUI();
-            }
+//            if(e.getSource().equals(btnMessages)) {
+//                isMessageUI = true;
+//                switchUI();
+//            }
 
             if(e.getSource().equals(btnCourses)){
                 isCourseUI = true;
@@ -337,6 +376,27 @@ public class MainUI extends JFrame implements MSG
                     p.put(instructorUserName);
                     NetworkManager.SendPacket(p);
                 }
+            }
+
+            if(e.getSource().equals(btnSearch)){
+                model.clear();
+
+                Packet p = new Packet(CMSG_COURSE_SEARCH);
+
+                p.put(cbSearchBy.getSelectedItem());
+
+                if(tfSearch.getText().trim().equals(""))
+                    p.put("All Courses");
+                else
+                p.put(tfSearch.getText());
+
+                NetworkManager.SendPacket(p);
+            }
+
+            if(e.getSource().equals(btnRefreshSchedule)){
+                model3.clear();
+                Packet p = new Packet(CMSG_GET_SCHED_LIST);
+                NetworkManager.SendPacket(p);
             }
 
 

@@ -25,12 +25,12 @@ public class NetworkThread implements Runnable, MSG
     {
         thread = Thread.currentThread();
         
-        //sessionStatus = SessionStatus.LOGGEDIN;
-        
+
         PacketStorage = new ArrayList<Packet>();
         
         // The server will first send SMSG_COURSE_DETAIL signal to inform client that this is a client detail data.
-       NetworkManager.getCourseList();
+        Packet packet= new Packet(CMSG_GET_SCHED_LIST);
+        SendPacket(packet);
 
         Packet p;
         
@@ -97,20 +97,29 @@ public class NetworkThread implements Runnable, MSG
         }
     }
 
+    void HandleSchedDetailMessage(Packet packet) throws Exception
+    {
+        String courseName = (String)packet.get();
+        String Time = (String)packet.get();
+
+        UICore.getMainUI().model3.addElement(courseName+"   "+Time);
+
+    }
+
     void HandleCourseDetailMessage(Packet packet)
     {
         int guid = (Integer)packet.get();
         String c_username = (String)packet.get();
         String c_coursename = (String)packet.get();
         int c_crn = (Integer)packet.get();
-        int c_secionnumber = (Integer)packet.get();
+        int c_sectionnumber = (Integer)packet.get();
         String c_time = (String) packet.get();
         String c_classroom = (String) packet.get();
         int c_capacity = (Integer) packet.get();
         int maxCap = (Integer) packet.get();
 
 
-        Course c = new Course(c_crn, c_secionnumber, c_username, c_coursename, c_time, c_classroom, c_capacity, maxCap);
+        Course c = new Course(c_crn, c_sectionnumber, c_username, c_coursename, c_time, c_classroom, c_capacity, maxCap);
 
         UICore.getMainUI().addCourse(c);
     }
@@ -126,6 +135,10 @@ public class NetworkThread implements Runnable, MSG
     void HandleLogoutCompleteMessage(Packet packet)
     {
         NetworkManager.logout();
+    }
+
+    void HandleErrorMessage(Packet packet){
+        UICore.showMessageDialog((String)packet.get(), "Time Conflict", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }
