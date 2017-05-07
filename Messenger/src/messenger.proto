@@ -12,6 +12,3 @@ message MessageHeader {
     required MessageType messageType = 2;
 }
 
-message EmptyMessage {
-
-}

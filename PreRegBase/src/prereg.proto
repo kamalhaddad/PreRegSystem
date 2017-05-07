@@ -18,11 +18,11 @@ message UserData {
         PROFSSOR = 1;
         STUDENT = 2;
     }
-    required int32 id = 1;
-    required string name = 2;
-    required string username = 3;
-    required Access access = 4;
-    optional string email = 5;
+    required int32 id = 1 [default = 0];
+    required string name = 2 [default = ""];
+    required string username = 3 [default = ""];
+    optional Access access = 4;
+    optional string email = 5 [default = ""];
 }
 
 message CourseData {
@@ -36,9 +36,18 @@ message CourseData {
     required int32 max_capacity = 8;
 }
 
-message GetCoursesRequestData {
-    //TODO add query options such as department/professor
-    repeated CourseData courses = 2;
+message UserList {
+    repeated UserData user = 1;
 }
 
+message CourseList {
+    repeated CourseData course = 1;
+}
 
+message EmptyMessage {
+
+}
+
+message ErrorMessage {
+    required string errorMessage = 1;
+}

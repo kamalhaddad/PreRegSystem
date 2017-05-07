@@ -1177,67 +1177,67 @@ public final class PreRegProto {
   public interface UserDataOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // required int32 id = 1;
+    // required int32 id = 1 [default = 0];
     /**
-     * <code>required int32 id = 1;</code>
+     * <code>required int32 id = 1 [default = 0];</code>
      */
     boolean hasId();
     /**
-     * <code>required int32 id = 1;</code>
+     * <code>required int32 id = 1 [default = 0];</code>
      */
     int getId();
 
-    // required string name = 2;
+    // required string name = 2 [default = ""];
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     boolean hasName();
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
-    // required string username = 3;
+    // required string username = 3 [default = ""];
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     boolean hasUsername();
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     java.lang.String getUsername();
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
-    // required .base.UserData.Access access = 4;
+    // optional .base.UserData.Access access = 4;
     /**
-     * <code>required .base.UserData.Access access = 4;</code>
+     * <code>optional .base.UserData.Access access = 4;</code>
      */
     boolean hasAccess();
     /**
-     * <code>required .base.UserData.Access access = 4;</code>
+     * <code>optional .base.UserData.Access access = 4;</code>
      */
     com.prereg.base.data.PreRegProto.UserData.Access getAccess();
 
-    // optional string email = 5;
+    // optional string email = 5 [default = ""];
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     boolean hasEmail();
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
@@ -1455,33 +1455,33 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
-    // required int32 id = 1;
+    // required int32 id = 1 [default = 0];
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
-     * <code>required int32 id = 1;</code>
+     * <code>required int32 id = 1 [default = 0];</code>
      */
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 id = 1;</code>
+     * <code>required int32 id = 1 [default = 0];</code>
      */
     public int getId() {
       return id_;
     }
 
-    // required string name = 2;
+    // required string name = 2 [default = ""];
     public static final int NAME_FIELD_NUMBER = 2;
     private java.lang.Object name_;
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1498,7 +1498,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string name = 2;</code>
+     * <code>required string name = 2 [default = ""];</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1514,17 +1514,17 @@ public final class PreRegProto {
       }
     }
 
-    // required string username = 3;
+    // required string username = 3 [default = ""];
     public static final int USERNAME_FIELD_NUMBER = 3;
     private java.lang.Object username_;
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     public boolean hasUsername() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -1541,7 +1541,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string username = 3;</code>
+     * <code>required string username = 3 [default = ""];</code>
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -1557,33 +1557,33 @@ public final class PreRegProto {
       }
     }
 
-    // required .base.UserData.Access access = 4;
+    // optional .base.UserData.Access access = 4;
     public static final int ACCESS_FIELD_NUMBER = 4;
     private com.prereg.base.data.PreRegProto.UserData.Access access_;
     /**
-     * <code>required .base.UserData.Access access = 4;</code>
+     * <code>optional .base.UserData.Access access = 4;</code>
      */
     public boolean hasAccess() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required .base.UserData.Access access = 4;</code>
+     * <code>optional .base.UserData.Access access = 4;</code>
      */
     public com.prereg.base.data.PreRegProto.UserData.Access getAccess() {
       return access_;
     }
 
-    // optional string email = 5;
+    // optional string email = 5 [default = ""];
     public static final int EMAIL_FIELD_NUMBER = 5;
     private java.lang.Object email_;
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     public boolean hasEmail() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -1600,7 +1600,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>optional string email = 5;</code>
+     * <code>optional string email = 5 [default = ""];</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -1637,10 +1637,6 @@ public final class PreRegProto {
         return false;
       }
       if (!hasUsername()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAccess()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1923,10 +1919,6 @@ public final class PreRegProto {
           
           return false;
         }
-        if (!hasAccess()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -1949,22 +1941,22 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
-      // required int32 id = 1;
+      // required int32 id = 1 [default = 0];
       private int id_ ;
       /**
-       * <code>required int32 id = 1;</code>
+       * <code>required int32 id = 1 [default = 0];</code>
        */
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 id = 1;</code>
+       * <code>required int32 id = 1 [default = 0];</code>
        */
       public int getId() {
         return id_;
       }
       /**
-       * <code>required int32 id = 1;</code>
+       * <code>required int32 id = 1 [default = 0];</code>
        */
       public Builder setId(int value) {
         bitField0_ |= 0x00000001;
@@ -1973,7 +1965,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 id = 1;</code>
+       * <code>required int32 id = 1 [default = 0];</code>
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1982,16 +1974,16 @@ public final class PreRegProto {
         return this;
       }
 
-      // required string name = 2;
+      // required string name = 2 [default = ""];
       private java.lang.Object name_ = "";
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public boolean hasName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2005,7 +1997,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2021,7 +2013,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -2034,7 +2026,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2043,7 +2035,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string name = 2;</code>
+       * <code>required string name = 2 [default = ""];</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2056,16 +2048,16 @@ public final class PreRegProto {
         return this;
       }
 
-      // required string username = 3;
+      // required string username = 3 [default = ""];
       private java.lang.Object username_ = "";
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public boolean hasUsername() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -2079,7 +2071,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
@@ -2095,7 +2087,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public Builder setUsername(
           java.lang.String value) {
@@ -2108,7 +2100,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2117,7 +2109,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string username = 3;</code>
+       * <code>required string username = 3 [default = ""];</code>
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
@@ -2130,22 +2122,22 @@ public final class PreRegProto {
         return this;
       }
 
-      // required .base.UserData.Access access = 4;
+      // optional .base.UserData.Access access = 4;
       private com.prereg.base.data.PreRegProto.UserData.Access access_ = com.prereg.base.data.PreRegProto.UserData.Access.ADMIN;
       /**
-       * <code>required .base.UserData.Access access = 4;</code>
+       * <code>optional .base.UserData.Access access = 4;</code>
        */
       public boolean hasAccess() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required .base.UserData.Access access = 4;</code>
+       * <code>optional .base.UserData.Access access = 4;</code>
        */
       public com.prereg.base.data.PreRegProto.UserData.Access getAccess() {
         return access_;
       }
       /**
-       * <code>required .base.UserData.Access access = 4;</code>
+       * <code>optional .base.UserData.Access access = 4;</code>
        */
       public Builder setAccess(com.prereg.base.data.PreRegProto.UserData.Access value) {
         if (value == null) {
@@ -2157,7 +2149,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required .base.UserData.Access access = 4;</code>
+       * <code>optional .base.UserData.Access access = 4;</code>
        */
       public Builder clearAccess() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2166,16 +2158,16 @@ public final class PreRegProto {
         return this;
       }
 
-      // optional string email = 5;
+      // optional string email = 5 [default = ""];
       private java.lang.Object email_ = "";
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public boolean hasEmail() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
@@ -2189,7 +2181,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -2205,7 +2197,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -2218,7 +2210,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public Builder clearEmail() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2227,7 +2219,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>optional string email = 5;</code>
+       * <code>optional string email = 5 [default = ""];</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -3622,73 +3614,53 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.CourseData)
   }
 
-  public interface GetCoursesRequestDataOrBuilder
+  public interface UserListOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // repeated .base.CourseData courses = 2;
+    // repeated .base.UserData user = 1;
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    java.util.List<com.prereg.base.data.PreRegProto.CourseData> 
-        getCoursesList();
+    java.util.List<com.prereg.base.data.PreRegProto.UserData> 
+        getUserList();
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    com.prereg.base.data.PreRegProto.CourseData getCourses(int index);
+    com.prereg.base.data.PreRegProto.UserData getUser(int index);
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    int getCoursesCount();
+    int getUserCount();
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
-        getCoursesOrBuilderList();
+    java.util.List<? extends com.prereg.base.data.PreRegProto.UserDataOrBuilder> 
+        getUserOrBuilderList();
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCoursesOrBuilder(
+    com.prereg.base.data.PreRegProto.UserDataOrBuilder getUserOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code base.GetCoursesRequestData}
+   * Protobuf type {@code base.UserList}
    */
-  public static final class GetCoursesRequestData extends
+  public static final class UserList extends
       com.google.protobuf.GeneratedMessage
-      implements GetCoursesRequestDataOrBuilder {
-    // Use GetCoursesRequestData.newBuilder() to construct.
-    private GetCoursesRequestData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements UserListOrBuilder {
+    // Use UserList.newBuilder() to construct.
+    private UserList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private GetCoursesRequestData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private UserList(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final GetCoursesRequestData defaultInstance;
-    public static GetCoursesRequestData getDefaultInstance() {
+    private static final UserList defaultInstance;
+    public static UserList getDefaultInstance() {
       return defaultInstance;
     }
 
-    public GetCoursesRequestData getDefaultInstanceForType() {
+    public UserList getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -3698,7 +3670,7 @@ public final class PreRegProto {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private GetCoursesRequestData(
+    private UserList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3721,12 +3693,12 @@ public final class PreRegProto {
               }
               break;
             }
-            case 18: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                courses_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.CourseData>();
+                user_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.UserData>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              courses_.add(input.readMessage(com.prereg.base.data.PreRegProto.CourseData.PARSER, extensionRegistry));
+              user_.add(input.readMessage(com.prereg.base.data.PreRegProto.UserData.PARSER, extensionRegistry));
               break;
             }
           }
@@ -3738,7 +3710,7 @@ public final class PreRegProto {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          courses_ = java.util.Collections.unmodifiableList(courses_);
+          user_ = java.util.Collections.unmodifiableList(user_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3746,97 +3718,77 @@ public final class PreRegProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.prereg.base.data.PreRegProto.internal_static_base_GetCoursesRequestData_descriptor;
+      return com.prereg.base.data.PreRegProto.internal_static_base_UserList_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.prereg.base.data.PreRegProto.internal_static_base_GetCoursesRequestData_fieldAccessorTable
+      return com.prereg.base.data.PreRegProto.internal_static_base_UserList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.prereg.base.data.PreRegProto.GetCoursesRequestData.class, com.prereg.base.data.PreRegProto.GetCoursesRequestData.Builder.class);
+              com.prereg.base.data.PreRegProto.UserList.class, com.prereg.base.data.PreRegProto.UserList.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<GetCoursesRequestData> PARSER =
-        new com.google.protobuf.AbstractParser<GetCoursesRequestData>() {
-      public GetCoursesRequestData parsePartialFrom(
+    public static com.google.protobuf.Parser<UserList> PARSER =
+        new com.google.protobuf.AbstractParser<UserList>() {
+      public UserList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetCoursesRequestData(input, extensionRegistry);
+        return new UserList(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GetCoursesRequestData> getParserForType() {
+    public com.google.protobuf.Parser<UserList> getParserForType() {
       return PARSER;
     }
 
-    // repeated .base.CourseData courses = 2;
-    public static final int COURSES_FIELD_NUMBER = 2;
-    private java.util.List<com.prereg.base.data.PreRegProto.CourseData> courses_;
+    // repeated .base.UserData user = 1;
+    public static final int USER_FIELD_NUMBER = 1;
+    private java.util.List<com.prereg.base.data.PreRegProto.UserData> user_;
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    public java.util.List<com.prereg.base.data.PreRegProto.CourseData> getCoursesList() {
-      return courses_;
+    public java.util.List<com.prereg.base.data.PreRegProto.UserData> getUserList() {
+      return user_;
     }
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    public java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
-        getCoursesOrBuilderList() {
-      return courses_;
+    public java.util.List<? extends com.prereg.base.data.PreRegProto.UserDataOrBuilder> 
+        getUserOrBuilderList() {
+      return user_;
     }
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    public int getCoursesCount() {
-      return courses_.size();
+    public int getUserCount() {
+      return user_.size();
     }
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    public com.prereg.base.data.PreRegProto.CourseData getCourses(int index) {
-      return courses_.get(index);
+    public com.prereg.base.data.PreRegProto.UserData getUser(int index) {
+      return user_.get(index);
     }
     /**
-     * <code>repeated .base.CourseData courses = 2;</code>
-     *
-     * <pre>
-     *TODO add query options such as department/professor
-     * </pre>
+     * <code>repeated .base.UserData user = 1;</code>
      */
-    public com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCoursesOrBuilder(
+    public com.prereg.base.data.PreRegProto.UserDataOrBuilder getUserOrBuilder(
         int index) {
-      return courses_.get(index);
+      return user_.get(index);
     }
 
     private void initFields() {
-      courses_ = java.util.Collections.emptyList();
+      user_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      for (int i = 0; i < getCoursesCount(); i++) {
-        if (!getCourses(i).isInitialized()) {
+      for (int i = 0; i < getUserCount(); i++) {
+        if (!getUser(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -3848,8 +3800,8 @@ public final class PreRegProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < courses_.size(); i++) {
-        output.writeMessage(2, courses_.get(i));
+      for (int i = 0; i < user_.size(); i++) {
+        output.writeMessage(1, user_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -3860,9 +3812,9 @@ public final class PreRegProto {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < courses_.size(); i++) {
+      for (int i = 0; i < user_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, courses_.get(i));
+          .computeMessageSize(1, user_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3876,53 +3828,53 @@ public final class PreRegProto {
       return super.writeReplace();
     }
 
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(byte[] data)
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(java.io.InputStream input)
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseDelimitedFrom(java.io.InputStream input)
+    public static com.prereg.base.data.PreRegProto.UserList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseDelimitedFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.prereg.base.data.PreRegProto.GetCoursesRequestData parseFrom(
+    public static com.prereg.base.data.PreRegProto.UserList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3931,7 +3883,7 @@ public final class PreRegProto {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.prereg.base.data.PreRegProto.GetCoursesRequestData prototype) {
+    public static Builder newBuilder(com.prereg.base.data.PreRegProto.UserList prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -3943,24 +3895,24 @@ public final class PreRegProto {
       return builder;
     }
     /**
-     * Protobuf type {@code base.GetCoursesRequestData}
+     * Protobuf type {@code base.UserList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.prereg.base.data.PreRegProto.GetCoursesRequestDataOrBuilder {
+       implements com.prereg.base.data.PreRegProto.UserListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.prereg.base.data.PreRegProto.internal_static_base_GetCoursesRequestData_descriptor;
+        return com.prereg.base.data.PreRegProto.internal_static_base_UserList_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.prereg.base.data.PreRegProto.internal_static_base_GetCoursesRequestData_fieldAccessorTable
+        return com.prereg.base.data.PreRegProto.internal_static_base_UserList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.prereg.base.data.PreRegProto.GetCoursesRequestData.class, com.prereg.base.data.PreRegProto.GetCoursesRequestData.Builder.class);
+                com.prereg.base.data.PreRegProto.UserList.class, com.prereg.base.data.PreRegProto.UserList.Builder.class);
       }
 
-      // Construct using com.prereg.base.data.PreRegProto.GetCoursesRequestData.newBuilder()
+      // Construct using com.prereg.base.data.PreRegProto.UserList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3972,7 +3924,7 @@ public final class PreRegProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getCoursesFieldBuilder();
+          getUserFieldBuilder();
         }
       }
       private static Builder create() {
@@ -3981,11 +3933,11 @@ public final class PreRegProto {
 
       public Builder clear() {
         super.clear();
-        if (coursesBuilder_ == null) {
-          courses_ = java.util.Collections.emptyList();
+        if (userBuilder_ == null) {
+          user_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          coursesBuilder_.clear();
+          userBuilder_.clear();
         }
         return this;
       }
@@ -3996,71 +3948,71 @@ public final class PreRegProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.prereg.base.data.PreRegProto.internal_static_base_GetCoursesRequestData_descriptor;
+        return com.prereg.base.data.PreRegProto.internal_static_base_UserList_descriptor;
       }
 
-      public com.prereg.base.data.PreRegProto.GetCoursesRequestData getDefaultInstanceForType() {
-        return com.prereg.base.data.PreRegProto.GetCoursesRequestData.getDefaultInstance();
+      public com.prereg.base.data.PreRegProto.UserList getDefaultInstanceForType() {
+        return com.prereg.base.data.PreRegProto.UserList.getDefaultInstance();
       }
 
-      public com.prereg.base.data.PreRegProto.GetCoursesRequestData build() {
-        com.prereg.base.data.PreRegProto.GetCoursesRequestData result = buildPartial();
+      public com.prereg.base.data.PreRegProto.UserList build() {
+        com.prereg.base.data.PreRegProto.UserList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.prereg.base.data.PreRegProto.GetCoursesRequestData buildPartial() {
-        com.prereg.base.data.PreRegProto.GetCoursesRequestData result = new com.prereg.base.data.PreRegProto.GetCoursesRequestData(this);
+      public com.prereg.base.data.PreRegProto.UserList buildPartial() {
+        com.prereg.base.data.PreRegProto.UserList result = new com.prereg.base.data.PreRegProto.UserList(this);
         int from_bitField0_ = bitField0_;
-        if (coursesBuilder_ == null) {
+        if (userBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            courses_ = java.util.Collections.unmodifiableList(courses_);
+            user_ = java.util.Collections.unmodifiableList(user_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.courses_ = courses_;
+          result.user_ = user_;
         } else {
-          result.courses_ = coursesBuilder_.build();
+          result.user_ = userBuilder_.build();
         }
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.prereg.base.data.PreRegProto.GetCoursesRequestData) {
-          return mergeFrom((com.prereg.base.data.PreRegProto.GetCoursesRequestData)other);
+        if (other instanceof com.prereg.base.data.PreRegProto.UserList) {
+          return mergeFrom((com.prereg.base.data.PreRegProto.UserList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.prereg.base.data.PreRegProto.GetCoursesRequestData other) {
-        if (other == com.prereg.base.data.PreRegProto.GetCoursesRequestData.getDefaultInstance()) return this;
-        if (coursesBuilder_ == null) {
-          if (!other.courses_.isEmpty()) {
-            if (courses_.isEmpty()) {
-              courses_ = other.courses_;
+      public Builder mergeFrom(com.prereg.base.data.PreRegProto.UserList other) {
+        if (other == com.prereg.base.data.PreRegProto.UserList.getDefaultInstance()) return this;
+        if (userBuilder_ == null) {
+          if (!other.user_.isEmpty()) {
+            if (user_.isEmpty()) {
+              user_ = other.user_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureCoursesIsMutable();
-              courses_.addAll(other.courses_);
+              ensureUserIsMutable();
+              user_.addAll(other.user_);
             }
             onChanged();
           }
         } else {
-          if (!other.courses_.isEmpty()) {
-            if (coursesBuilder_.isEmpty()) {
-              coursesBuilder_.dispose();
-              coursesBuilder_ = null;
-              courses_ = other.courses_;
+          if (!other.user_.isEmpty()) {
+            if (userBuilder_.isEmpty()) {
+              userBuilder_.dispose();
+              userBuilder_ = null;
+              user_ = other.user_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              coursesBuilder_ = 
+              userBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getCoursesFieldBuilder() : null;
+                   getUserFieldBuilder() : null;
             } else {
-              coursesBuilder_.addAllMessages(other.courses_);
+              userBuilder_.addAllMessages(other.user_);
             }
           }
         }
@@ -4069,8 +4021,8 @@ public final class PreRegProto {
       }
 
       public final boolean isInitialized() {
-        for (int i = 0; i < getCoursesCount(); i++) {
-          if (!getCourses(i).isInitialized()) {
+        for (int i = 0; i < getUserCount(); i++) {
+          if (!getUser(i).isInitialized()) {
             
             return false;
           }
@@ -4082,11 +4034,11 @@ public final class PreRegProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.prereg.base.data.PreRegProto.GetCoursesRequestData parsedMessage = null;
+        com.prereg.base.data.PreRegProto.UserList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.prereg.base.data.PreRegProto.GetCoursesRequestData) e.getUnfinishedMessage();
+          parsedMessage = (com.prereg.base.data.PreRegProto.UserList) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -4097,327 +4049,1250 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
-      // repeated .base.CourseData courses = 2;
-      private java.util.List<com.prereg.base.data.PreRegProto.CourseData> courses_ =
+      // repeated .base.UserData user = 1;
+      private java.util.List<com.prereg.base.data.PreRegProto.UserData> user_ =
         java.util.Collections.emptyList();
-      private void ensureCoursesIsMutable() {
+      private void ensureUserIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          courses_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.CourseData>(courses_);
+          user_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.UserData>(user_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder> coursesBuilder_;
+          com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder> userBuilder_;
 
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public java.util.List<com.prereg.base.data.PreRegProto.CourseData> getCoursesList() {
-        if (coursesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(courses_);
+      public java.util.List<com.prereg.base.data.PreRegProto.UserData> getUserList() {
+        if (userBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(user_);
         } else {
-          return coursesBuilder_.getMessageList();
+          return userBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public int getCoursesCount() {
-        if (coursesBuilder_ == null) {
-          return courses_.size();
+      public int getUserCount() {
+        if (userBuilder_ == null) {
+          return user_.size();
         } else {
-          return coursesBuilder_.getCount();
+          return userBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public com.prereg.base.data.PreRegProto.CourseData getCourses(int index) {
-        if (coursesBuilder_ == null) {
-          return courses_.get(index);
+      public com.prereg.base.data.PreRegProto.UserData getUser(int index) {
+        if (userBuilder_ == null) {
+          return user_.get(index);
         } else {
-          return coursesBuilder_.getMessage(index);
+          return userBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder setCourses(
-          int index, com.prereg.base.data.PreRegProto.CourseData value) {
-        if (coursesBuilder_ == null) {
+      public Builder setUser(
+          int index, com.prereg.base.data.PreRegProto.UserData value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoursesIsMutable();
-          courses_.set(index, value);
+          ensureUserIsMutable();
+          user_.set(index, value);
           onChanged();
         } else {
-          coursesBuilder_.setMessage(index, value);
+          userBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder setCourses(
-          int index, com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
-        if (coursesBuilder_ == null) {
-          ensureCoursesIsMutable();
-          courses_.set(index, builderForValue.build());
+      public Builder setUser(
+          int index, com.prereg.base.data.PreRegProto.UserData.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.set(index, builderForValue.build());
           onChanged();
         } else {
-          coursesBuilder_.setMessage(index, builderForValue.build());
+          userBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder addCourses(com.prereg.base.data.PreRegProto.CourseData value) {
-        if (coursesBuilder_ == null) {
+      public Builder addUser(com.prereg.base.data.PreRegProto.UserData value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoursesIsMutable();
-          courses_.add(value);
+          ensureUserIsMutable();
+          user_.add(value);
           onChanged();
         } else {
-          coursesBuilder_.addMessage(value);
+          userBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder addCourses(
-          int index, com.prereg.base.data.PreRegProto.CourseData value) {
-        if (coursesBuilder_ == null) {
+      public Builder addUser(
+          int index, com.prereg.base.data.PreRegProto.UserData value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoursesIsMutable();
-          courses_.add(index, value);
+          ensureUserIsMutable();
+          user_.add(index, value);
           onChanged();
         } else {
-          coursesBuilder_.addMessage(index, value);
+          userBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder addCourses(
-          com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
-        if (coursesBuilder_ == null) {
-          ensureCoursesIsMutable();
-          courses_.add(builderForValue.build());
+      public Builder addUser(
+          com.prereg.base.data.PreRegProto.UserData.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.add(builderForValue.build());
           onChanged();
         } else {
-          coursesBuilder_.addMessage(builderForValue.build());
+          userBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder addCourses(
-          int index, com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
-        if (coursesBuilder_ == null) {
-          ensureCoursesIsMutable();
-          courses_.add(index, builderForValue.build());
+      public Builder addUser(
+          int index, com.prereg.base.data.PreRegProto.UserData.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.add(index, builderForValue.build());
           onChanged();
         } else {
-          coursesBuilder_.addMessage(index, builderForValue.build());
+          userBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder addAllCourses(
-          java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.CourseData> values) {
-        if (coursesBuilder_ == null) {
-          ensureCoursesIsMutable();
-          super.addAll(values, courses_);
+      public Builder addAllUser(
+          java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.UserData> values) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          super.addAll(values, user_);
           onChanged();
         } else {
-          coursesBuilder_.addAllMessages(values);
+          userBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder clearCourses() {
-        if (coursesBuilder_ == null) {
-          courses_ = java.util.Collections.emptyList();
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          coursesBuilder_.clear();
+          userBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public Builder removeCourses(int index) {
-        if (coursesBuilder_ == null) {
-          ensureCoursesIsMutable();
-          courses_.remove(index);
+      public Builder removeUser(int index) {
+        if (userBuilder_ == null) {
+          ensureUserIsMutable();
+          user_.remove(index);
           onChanged();
         } else {
-          coursesBuilder_.remove(index);
+          userBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public com.prereg.base.data.PreRegProto.CourseData.Builder getCoursesBuilder(
+      public com.prereg.base.data.PreRegProto.UserData.Builder getUserBuilder(
           int index) {
-        return getCoursesFieldBuilder().getBuilder(index);
+        return getUserFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCoursesOrBuilder(
+      public com.prereg.base.data.PreRegProto.UserDataOrBuilder getUserOrBuilder(
           int index) {
-        if (coursesBuilder_ == null) {
-          return courses_.get(index);  } else {
-          return coursesBuilder_.getMessageOrBuilder(index);
+        if (userBuilder_ == null) {
+          return user_.get(index);  } else {
+          return userBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
-           getCoursesOrBuilderList() {
-        if (coursesBuilder_ != null) {
-          return coursesBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.prereg.base.data.PreRegProto.UserDataOrBuilder> 
+           getUserOrBuilderList() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(courses_);
+          return java.util.Collections.unmodifiableList(user_);
         }
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public com.prereg.base.data.PreRegProto.CourseData.Builder addCoursesBuilder() {
-        return getCoursesFieldBuilder().addBuilder(
-            com.prereg.base.data.PreRegProto.CourseData.getDefaultInstance());
+      public com.prereg.base.data.PreRegProto.UserData.Builder addUserBuilder() {
+        return getUserFieldBuilder().addBuilder(
+            com.prereg.base.data.PreRegProto.UserData.getDefaultInstance());
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public com.prereg.base.data.PreRegProto.CourseData.Builder addCoursesBuilder(
+      public com.prereg.base.data.PreRegProto.UserData.Builder addUserBuilder(
           int index) {
-        return getCoursesFieldBuilder().addBuilder(
-            index, com.prereg.base.data.PreRegProto.CourseData.getDefaultInstance());
+        return getUserFieldBuilder().addBuilder(
+            index, com.prereg.base.data.PreRegProto.UserData.getDefaultInstance());
       }
       /**
-       * <code>repeated .base.CourseData courses = 2;</code>
-       *
-       * <pre>
-       *TODO add query options such as department/professor
-       * </pre>
+       * <code>repeated .base.UserData user = 1;</code>
        */
-      public java.util.List<com.prereg.base.data.PreRegProto.CourseData.Builder> 
-           getCoursesBuilderList() {
-        return getCoursesFieldBuilder().getBuilderList();
+      public java.util.List<com.prereg.base.data.PreRegProto.UserData.Builder> 
+           getUserBuilderList() {
+        return getUserFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
-          getCoursesFieldBuilder() {
-        if (coursesBuilder_ == null) {
-          coursesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder>(
-                  courses_,
+          com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder>(
+                  user_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          courses_ = null;
+          user_ = null;
         }
-        return coursesBuilder_;
+        return userBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:base.GetCoursesRequestData)
+      // @@protoc_insertion_point(builder_scope:base.UserList)
     }
 
     static {
-      defaultInstance = new GetCoursesRequestData(true);
+      defaultInstance = new UserList(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:base.GetCoursesRequestData)
+    // @@protoc_insertion_point(class_scope:base.UserList)
+  }
+
+  public interface CourseListOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // repeated .base.CourseData course = 1;
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    java.util.List<com.prereg.base.data.PreRegProto.CourseData> 
+        getCourseList();
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    com.prereg.base.data.PreRegProto.CourseData getCourse(int index);
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    int getCourseCount();
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
+        getCourseOrBuilderList();
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCourseOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code base.CourseList}
+   */
+  public static final class CourseList extends
+      com.google.protobuf.GeneratedMessage
+      implements CourseListOrBuilder {
+    // Use CourseList.newBuilder() to construct.
+    private CourseList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CourseList(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CourseList defaultInstance;
+    public static CourseList getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CourseList getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CourseList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                course_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.CourseData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              course_.add(input.readMessage(com.prereg.base.data.PreRegProto.CourseData.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          course_ = java.util.Collections.unmodifiableList(course_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prereg.base.data.PreRegProto.CourseList.class, com.prereg.base.data.PreRegProto.CourseList.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CourseList> PARSER =
+        new com.google.protobuf.AbstractParser<CourseList>() {
+      public CourseList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CourseList(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CourseList> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .base.CourseData course = 1;
+    public static final int COURSE_FIELD_NUMBER = 1;
+    private java.util.List<com.prereg.base.data.PreRegProto.CourseData> course_;
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    public java.util.List<com.prereg.base.data.PreRegProto.CourseData> getCourseList() {
+      return course_;
+    }
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    public java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
+        getCourseOrBuilderList() {
+      return course_;
+    }
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    public int getCourseCount() {
+      return course_.size();
+    }
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    public com.prereg.base.data.PreRegProto.CourseData getCourse(int index) {
+      return course_.get(index);
+    }
+    /**
+     * <code>repeated .base.CourseData course = 1;</code>
+     */
+    public com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCourseOrBuilder(
+        int index) {
+      return course_.get(index);
+    }
+
+    private void initFields() {
+      course_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      for (int i = 0; i < getCourseCount(); i++) {
+        if (!getCourse(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < course_.size(); i++) {
+        output.writeMessage(1, course_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < course_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, course_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.CourseList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.prereg.base.data.PreRegProto.CourseList prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code base.CourseList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.CourseListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prereg.base.data.PreRegProto.CourseList.class, com.prereg.base.data.PreRegProto.CourseList.Builder.class);
+      }
+
+      // Construct using com.prereg.base.data.PreRegProto.CourseList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getCourseFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (courseBuilder_ == null) {
+          course_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          courseBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_descriptor;
+      }
+
+      public com.prereg.base.data.PreRegProto.CourseList getDefaultInstanceForType() {
+        return com.prereg.base.data.PreRegProto.CourseList.getDefaultInstance();
+      }
+
+      public com.prereg.base.data.PreRegProto.CourseList build() {
+        com.prereg.base.data.PreRegProto.CourseList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.prereg.base.data.PreRegProto.CourseList buildPartial() {
+        com.prereg.base.data.PreRegProto.CourseList result = new com.prereg.base.data.PreRegProto.CourseList(this);
+        int from_bitField0_ = bitField0_;
+        if (courseBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            course_ = java.util.Collections.unmodifiableList(course_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.course_ = course_;
+        } else {
+          result.course_ = courseBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prereg.base.data.PreRegProto.CourseList) {
+          return mergeFrom((com.prereg.base.data.PreRegProto.CourseList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prereg.base.data.PreRegProto.CourseList other) {
+        if (other == com.prereg.base.data.PreRegProto.CourseList.getDefaultInstance()) return this;
+        if (courseBuilder_ == null) {
+          if (!other.course_.isEmpty()) {
+            if (course_.isEmpty()) {
+              course_ = other.course_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCourseIsMutable();
+              course_.addAll(other.course_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.course_.isEmpty()) {
+            if (courseBuilder_.isEmpty()) {
+              courseBuilder_.dispose();
+              courseBuilder_ = null;
+              course_ = other.course_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              courseBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getCourseFieldBuilder() : null;
+            } else {
+              courseBuilder_.addAllMessages(other.course_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getCourseCount(); i++) {
+          if (!getCourse(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prereg.base.data.PreRegProto.CourseList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prereg.base.data.PreRegProto.CourseList) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .base.CourseData course = 1;
+      private java.util.List<com.prereg.base.data.PreRegProto.CourseData> course_ =
+        java.util.Collections.emptyList();
+      private void ensureCourseIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          course_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.CourseData>(course_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder> courseBuilder_;
+
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public java.util.List<com.prereg.base.data.PreRegProto.CourseData> getCourseList() {
+        if (courseBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(course_);
+        } else {
+          return courseBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public int getCourseCount() {
+        if (courseBuilder_ == null) {
+          return course_.size();
+        } else {
+          return courseBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.CourseData getCourse(int index) {
+        if (courseBuilder_ == null) {
+          return course_.get(index);
+        } else {
+          return courseBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder setCourse(
+          int index, com.prereg.base.data.PreRegProto.CourseData value) {
+        if (courseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCourseIsMutable();
+          course_.set(index, value);
+          onChanged();
+        } else {
+          courseBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder setCourse(
+          int index, com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
+        if (courseBuilder_ == null) {
+          ensureCourseIsMutable();
+          course_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          courseBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder addCourse(com.prereg.base.data.PreRegProto.CourseData value) {
+        if (courseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCourseIsMutable();
+          course_.add(value);
+          onChanged();
+        } else {
+          courseBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder addCourse(
+          int index, com.prereg.base.data.PreRegProto.CourseData value) {
+        if (courseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCourseIsMutable();
+          course_.add(index, value);
+          onChanged();
+        } else {
+          courseBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder addCourse(
+          com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
+        if (courseBuilder_ == null) {
+          ensureCourseIsMutable();
+          course_.add(builderForValue.build());
+          onChanged();
+        } else {
+          courseBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder addCourse(
+          int index, com.prereg.base.data.PreRegProto.CourseData.Builder builderForValue) {
+        if (courseBuilder_ == null) {
+          ensureCourseIsMutable();
+          course_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          courseBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder addAllCourse(
+          java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.CourseData> values) {
+        if (courseBuilder_ == null) {
+          ensureCourseIsMutable();
+          super.addAll(values, course_);
+          onChanged();
+        } else {
+          courseBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder clearCourse() {
+        if (courseBuilder_ == null) {
+          course_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          courseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public Builder removeCourse(int index) {
+        if (courseBuilder_ == null) {
+          ensureCourseIsMutable();
+          course_.remove(index);
+          onChanged();
+        } else {
+          courseBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.CourseData.Builder getCourseBuilder(
+          int index) {
+        return getCourseFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.CourseDataOrBuilder getCourseOrBuilder(
+          int index) {
+        if (courseBuilder_ == null) {
+          return course_.get(index);  } else {
+          return courseBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public java.util.List<? extends com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
+           getCourseOrBuilderList() {
+        if (courseBuilder_ != null) {
+          return courseBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(course_);
+        }
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.CourseData.Builder addCourseBuilder() {
+        return getCourseFieldBuilder().addBuilder(
+            com.prereg.base.data.PreRegProto.CourseData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.CourseData.Builder addCourseBuilder(
+          int index) {
+        return getCourseFieldBuilder().addBuilder(
+            index, com.prereg.base.data.PreRegProto.CourseData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .base.CourseData course = 1;</code>
+       */
+      public java.util.List<com.prereg.base.data.PreRegProto.CourseData.Builder> 
+           getCourseBuilderList() {
+        return getCourseFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder> 
+          getCourseFieldBuilder() {
+        if (courseBuilder_ == null) {
+          courseBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.prereg.base.data.PreRegProto.CourseData, com.prereg.base.data.PreRegProto.CourseData.Builder, com.prereg.base.data.PreRegProto.CourseDataOrBuilder>(
+                  course_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          course_ = null;
+        }
+        return courseBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:base.CourseList)
+    }
+
+    static {
+      defaultInstance = new CourseList(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:base.CourseList)
+  }
+
+  public interface EmptyMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code base.EmptyMessage}
+   */
+  public static final class EmptyMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements EmptyMessageOrBuilder {
+    // Use EmptyMessage.newBuilder() to construct.
+    private EmptyMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private EmptyMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final EmptyMessage defaultInstance;
+    public static EmptyMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public EmptyMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EmptyMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prereg.base.data.PreRegProto.EmptyMessage.class, com.prereg.base.data.PreRegProto.EmptyMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<EmptyMessage> PARSER =
+        new com.google.protobuf.AbstractParser<EmptyMessage>() {
+      public EmptyMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EmptyMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmptyMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.EmptyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.prereg.base.data.PreRegProto.EmptyMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code base.EmptyMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.EmptyMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prereg.base.data.PreRegProto.EmptyMessage.class, com.prereg.base.data.PreRegProto.EmptyMessage.Builder.class);
+      }
+
+      // Construct using com.prereg.base.data.PreRegProto.EmptyMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_descriptor;
+      }
+
+      public com.prereg.base.data.PreRegProto.EmptyMessage getDefaultInstanceForType() {
+        return com.prereg.base.data.PreRegProto.EmptyMessage.getDefaultInstance();
+      }
+
+      public com.prereg.base.data.PreRegProto.EmptyMessage build() {
+        com.prereg.base.data.PreRegProto.EmptyMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.prereg.base.data.PreRegProto.EmptyMessage buildPartial() {
+        com.prereg.base.data.PreRegProto.EmptyMessage result = new com.prereg.base.data.PreRegProto.EmptyMessage(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prereg.base.data.PreRegProto.EmptyMessage) {
+          return mergeFrom((com.prereg.base.data.PreRegProto.EmptyMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prereg.base.data.PreRegProto.EmptyMessage other) {
+        if (other == com.prereg.base.data.PreRegProto.EmptyMessage.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prereg.base.data.PreRegProto.EmptyMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prereg.base.data.PreRegProto.EmptyMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:base.EmptyMessage)
+    }
+
+    static {
+      defaultInstance = new EmptyMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:base.EmptyMessage)
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
@@ -4441,10 +5316,20 @@ public final class PreRegProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_CourseData_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_base_GetCoursesRequestData_descriptor;
+    internal_static_base_UserList_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_base_GetCoursesRequestData_fieldAccessorTable;
+      internal_static_base_UserList_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_base_CourseList_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_base_CourseList_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_base_EmptyMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_base_EmptyMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4457,18 +5342,19 @@ public final class PreRegProto {
       "\n\033PreRegBase/src/prereg.proto\022\004base\"6\n\020L" +
       "oginRequestData\022\020\n\010username\030\001 \002(\t\022\020\n\010pas" +
       "sword\030\002 \002(\t\"5\n\021LoginResponseData\022 \n\010user" +
-      "Data\030\001 \002(\0132\016.base.UserData\"\234\001\n\010UserData\022" +
-      "\n\n\002id\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\020\n\010username\030\003 " +
-      "\002(\t\022%\n\006access\030\004 \002(\0162\025.base.UserData.Acce" +
-      "ss\022\r\n\005email\030\005 \001(\t\".\n\006Access\022\t\n\005ADMIN\020\000\022\014" +
-      "\n\010PROFSSOR\020\001\022\013\n\007STUDENT\020\002\"\261\001\n\nCourseData" +
-      "\022\013\n\003CRN\030\001 \002(\005\022\025\n\rsectionNumber\030\002 \002(\005\022\"\n\n" +
-      "instructor\030\003 \002(\0132\016.base.UserData\022\022\n\ncour",
-      "seName\030\004 \002(\t\022\014\n\004time\030\005 \002(\t\022\021\n\tclassRoom\030" +
-      "\006 \002(\t\022\020\n\010capacity\030\007 \002(\005\022\024\n\014max_capacity\030" +
-      "\010 \002(\005\":\n\025GetCoursesRequestData\022!\n\007course" +
-      "s\030\002 \003(\0132\020.base.CourseDataB#\n\024com.prereg." +
-      "base.dataB\013PreRegProto"
+      "Data\030\001 \002(\0132\016.base.UserData\"\245\001\n\010UserData\022" +
+      "\r\n\002id\030\001 \002(\005:\0010\022\016\n\004name\030\002 \002(\t:\000\022\022\n\010userna" +
+      "me\030\003 \002(\t:\000\022%\n\006access\030\004 \001(\0162\025.base.UserDa" +
+      "ta.Access\022\017\n\005email\030\005 \001(\t:\000\".\n\006Access\022\t\n\005" +
+      "ADMIN\020\000\022\014\n\010PROFSSOR\020\001\022\013\n\007STUDENT\020\002\"\261\001\n\nC" +
+      "ourseData\022\013\n\003CRN\030\001 \002(\005\022\025\n\rsectionNumber\030" +
+      "\002 \002(\005\022\"\n\ninstructor\030\003 \002(\0132\016.base.UserDat",
+      "a\022\022\n\ncourseName\030\004 \002(\t\022\014\n\004time\030\005 \002(\t\022\021\n\tc" +
+      "lassRoom\030\006 \002(\t\022\020\n\010capacity\030\007 \002(\005\022\024\n\014max_" +
+      "capacity\030\010 \002(\005\"(\n\010UserList\022\034\n\004user\030\001 \003(\013" +
+      "2\016.base.UserData\".\n\nCourseList\022 \n\006course" +
+      "\030\001 \003(\0132\020.base.CourseData\"\016\n\014EmptyMessage" +
+      "B#\n\024com.prereg.base.dataB\013PreRegProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -4499,12 +5385,24 @@ public final class PreRegProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_CourseData_descriptor,
               new java.lang.String[] { "CRN", "SectionNumber", "Instructor", "CourseName", "Time", "ClassRoom", "Capacity", "MaxCapacity", });
-          internal_static_base_GetCoursesRequestData_descriptor =
+          internal_static_base_UserList_descriptor =
             getDescriptor().getMessageTypes().get(4);
-          internal_static_base_GetCoursesRequestData_fieldAccessorTable = new
+          internal_static_base_UserList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_base_GetCoursesRequestData_descriptor,
-              new java.lang.String[] { "Courses", });
+              internal_static_base_UserList_descriptor,
+              new java.lang.String[] { "User", });
+          internal_static_base_CourseList_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_base_CourseList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_CourseList_descriptor,
+              new java.lang.String[] { "Course", });
+          internal_static_base_EmptyMessage_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_base_EmptyMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_EmptyMessage_descriptor,
+              new java.lang.String[] { });
           return null;
         }
       };

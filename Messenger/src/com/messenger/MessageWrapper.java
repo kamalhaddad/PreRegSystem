@@ -41,8 +41,16 @@ public class MessageWrapper {
         return header;
     }
 
-    protected void setMessage(Message message) {
+    public void setMessage(Message message) {
         this.message = message;
+    }
+
+    public void setMessageCode(int code) {
+        this.header = MessengerProto.MessageHeader.newBuilder(header).setCode(code).build();
+    }
+
+    public void setMessageType(MessengerProto.MessageType messageType) {
+        this.header = MessengerProto.MessageHeader.newBuilder(header).setMessageType(messageType).build();
     }
 
 }

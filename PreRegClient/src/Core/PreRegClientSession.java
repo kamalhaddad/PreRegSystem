@@ -14,14 +14,15 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
+
+//TODO: Refactor this class to make it abstract
 public class PreRegClientSession extends Thread implements MessageSubject {
 
     private Socket socket;
+
     private Messenger messenger;
     private User user;
 
@@ -31,9 +32,12 @@ public class PreRegClientSession extends Thread implements MessageSubject {
 
     private Map<MessengerProto.MessageType, Vector<MessageObserver>> messageObservers;
 
+    private Queue<MessageObserver> messageObserverQueue;
+
     private PreRegClientSession() {
         observersLock = new ReentrantLock();
         messageObservers = new HashMap<>();
+        messageObserverQueue = new LinkedList<>();
     }
 
     public static PreRegClientSession getSession() {
@@ -67,8 +71,15 @@ public class PreRegClientSession extends Thread implements MessageSubject {
 
     public void run() {
         try {
-            MessageWrapper message = messenger.receiveMessage();
-            //TODO process the message
+            while (true) {
+                MessageWrapper message = messenger.receiveMessage();
+                //processMessage(message);
+                //TODO: add support for notification messages
+                observersLock.lock();
+                MessageObserver messageObserver = messageObserverQueue.poll();
+                observersLock.unlock();
+                messageObserver.notify(message);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,9 +105,17 @@ public class PreRegClientSession extends Thread implements MessageSubject {
         observersLock.unlock();
     }
 
+    public void queueMessage(MessageWrapper messageWrapper, MessageObserver messageObserver)
+            throws IOException {
+        observersLock.lock();
+        messageObserverQueue.offer(messageObserver);
+        messenger.sendMessage(messageWrapper);
+        observersLock.unlock();
+    }
+
     private void processMessage(MessageWrapper messageWrapper) {
         observersLock.lock();
-
+        //...
         observersLock.unlock();
     }
 
