@@ -48,6 +48,6 @@ message EmptyMessage {
 
 }
 
-message ReplyMessage {
-    required string replyMessage = 1;
+message ErrorMessage {
+    required string errorMessage = 1;
 }

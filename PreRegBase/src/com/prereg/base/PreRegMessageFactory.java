@@ -26,22 +26,25 @@ public class PreRegMessageFactory implements MessageFactory {
             MessengerProto.MessageType.newBuilder().setType("COURSES_SEARCH").build();
 
     public static final MessengerProto.MessageType COURSES_SEARCH_REPLY =
-            MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
+            MessengerProto.MessageType.newBuilder().setType("COURSES_SEARCH_REPLY").build();
 
     public static final MessengerProto.MessageType CHANGE_TIME_REQUEST =
-            MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
+            MessengerProto.MessageType.newBuilder().setType("CHANGE_TIME_REQUEST").build();
 
     public static final MessengerProto.MessageType OPEN_COURSE_REQUEST =
             MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
 
     public static final MessengerProto.MessageType GET_SCHEDULE_REQUEST =
-            MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
+            MessengerProto.MessageType.newBuilder().setType("GET_SCHEDULE_REQUEST").build();
 
     public static final MessengerProto.MessageType GET_SCHEDULE_RESPONSE =
-            MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
+            MessengerProto.MessageType.newBuilder().setType("GET_SCHEDULE_RESPONSE").build();
 
-    public static final MessengerProto.MessageType ERROR_MESSAGE =
-            MessengerProto.MessageType.newBuilder().setType("OPEN_COURSE_REQUEST").build();
+    public static final MessengerProto.MessageType CAPACITY_REQUEST =
+            MessengerProto.MessageType.newBuilder().setType("CAPACITY_REQUEST").build();
+
+    public static final MessengerProto.MessageType REPLY_MESSAGE =
+            MessengerProto.MessageType.newBuilder().setType("REPLY_MESSAGE").build();
 
     @Override
     public MessageWrapper createMessage(MessengerProto.MessageType messageType) {

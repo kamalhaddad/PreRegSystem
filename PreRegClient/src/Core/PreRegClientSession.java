@@ -47,9 +47,9 @@ public class PreRegClientSession extends Thread implements MessageSubject {
         return session;
     }
 
-    public void init(String username, String password)
+    public void init(String username, String password, MessageObserver loginObserver)
             throws IOException, IllegalStateException {
-        socket = new Socket("127.0.0.1", 5050);
+        socket = new Socket("127.0.0.1", 6769);
         messenger = new Messenger(new PreRegMessageFactory(),
                 new BufferedInputStream(socket.getInputStream()),
                 new BufferedOutputStream(socket.getOutputStream()));
@@ -65,6 +65,7 @@ public class PreRegClientSession extends Thread implements MessageSubject {
         if (loginResponse.getMessageCode() == PreRegMessageFactory.LOGIN_FAILURE) {
             throw new IllegalStateException("Login Failed");
         }
+        loginObserver.notify(loginResponse);
         PreRegProto.UserData userData = ((PreRegProto.LoginResponseData) loginResponse.getMessage()).getUserData();
         user = new User(userData);
     }
