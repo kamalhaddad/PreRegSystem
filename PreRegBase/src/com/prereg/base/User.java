@@ -23,6 +23,6 @@ public final class User {
     }
 
     public String getEmail() {
-        return userData.getName();
+        return userData.getEmail();
     }
 }

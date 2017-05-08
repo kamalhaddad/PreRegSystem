@@ -8,10 +8,10 @@ public final class PreRegProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface LoginRequestDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.LoginRequestData)
-      com.google.protobuf.MessageOrBuilder {
+  public interface LoginRequestDataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // required string username = 1;
     /**
      * <code>required string username = 1;</code>
      */
@@ -26,6 +26,7 @@ public final class PreRegProto {
     com.google.protobuf.ByteString
         getUsernameBytes();
 
+    // required string password = 2;
     /**
      * <code>required string password = 2;</code>
      */
@@ -44,9 +45,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.LoginRequestData}
    */
   public static final class LoginRequestData extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.LoginRequestData)
-      LoginRequestDataOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements LoginRequestDataOrBuilder {
     // Use LoginRequestData.newBuilder() to construct.
     private LoginRequestData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -93,15 +93,13 @@ public final class PreRegProto {
               break;
             }
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              username_ = bs;
+              username_ = input.readBytes();
               break;
             }
             case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              password_ = bs;
+              password_ = input.readBytes();
               break;
             }
           }
@@ -144,6 +142,7 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
+    // required string username = 1;
     public static final int USERNAME_FIELD_NUMBER = 1;
     private java.lang.Object username_;
     /**
@@ -186,6 +185,7 @@ public final class PreRegProto {
       }
     }
 
+    // required string password = 2;
     public static final int PASSWORD_FIELD_NUMBER = 2;
     private java.lang.Object password_;
     /**
@@ -235,8 +235,7 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
       if (!hasUsername()) {
         memoizedIsInitialized = 0;
@@ -358,9 +357,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.LoginRequestData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.LoginRequestData)
-        com.prereg.base.data.PreRegProto.LoginRequestDataOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.LoginRequestDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_LoginRequestData_descriptor;
@@ -494,6 +492,7 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // required string username = 1;
       private java.lang.Object username_ = "";
       /**
        * <code>required string username = 1;</code>
@@ -507,12 +506,9 @@ public final class PreRegProto {
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            username_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -570,6 +566,7 @@ public final class PreRegProto {
         return this;
       }
 
+      // required string password = 2;
       private java.lang.Object password_ = "";
       /**
        * <code>required string password = 2;</code>
@@ -583,12 +580,9 @@ public final class PreRegProto {
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            password_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          password_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -657,10 +651,10 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.LoginRequestData)
   }
 
-  public interface LoginResponseDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.LoginResponseData)
-      com.google.protobuf.MessageOrBuilder {
+  public interface LoginResponseDataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // required .base.UserData userData = 1;
     /**
      * <code>required .base.UserData userData = 1;</code>
      */
@@ -678,9 +672,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.LoginResponseData}
    */
   public static final class LoginResponseData extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.LoginResponseData)
-      LoginResponseDataOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements LoginResponseDataOrBuilder {
     // Use LoginResponseData.newBuilder() to construct.
     private LoginResponseData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -779,6 +772,7 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
+    // required .base.UserData userData = 1;
     public static final int USERDATA_FIELD_NUMBER = 1;
     private com.prereg.base.data.PreRegProto.UserData userData_;
     /**
@@ -806,14 +800,9 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
       if (!hasUserData()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getUserData().isInitialized()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -922,9 +911,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.LoginResponseData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.LoginResponseData)
-        com.prereg.base.data.PreRegProto.LoginResponseDataOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.LoginResponseDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_LoginResponseData_descriptor;
@@ -1028,10 +1016,6 @@ public final class PreRegProto {
           
           return false;
         }
-        if (!getUserData().isInitialized()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -1054,6 +1038,7 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // required .base.UserData userData = 1;
       private com.prereg.base.data.PreRegProto.UserData userData_ = com.prereg.base.data.PreRegProto.UserData.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder> userDataBuilder_;
@@ -1162,7 +1147,7 @@ public final class PreRegProto {
         if (userDataBuilder_ == null) {
           userDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder>(
-                  getUserData(),
+                  userData_,
                   getParentForChildren(),
                   isClean());
           userData_ = null;
@@ -1181,47 +1166,50 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.LoginResponseData)
   }
 
-  public interface UserDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.UserData)
-      com.google.protobuf.MessageOrBuilder {
+  public interface UserDataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // optional int32 id = 1;
     /**
-     * <code>required int32 id = 1 [default = 0];</code>
+     * <code>optional int32 id = 1;</code>
      */
     boolean hasId();
     /**
-     * <code>required int32 id = 1 [default = 0];</code>
+     * <code>optional int32 id = 1;</code>
      */
     int getId();
 
+    // optional string name = 2;
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     boolean hasName();
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
+    // optional string username = 3;
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     boolean hasUsername();
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     java.lang.String getUsername();
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
+    // optional .base.UserData.Access access = 4;
     /**
      * <code>optional .base.UserData.Access access = 4;</code>
      */
@@ -1231,16 +1219,17 @@ public final class PreRegProto {
      */
     com.prereg.base.data.PreRegProto.UserData.Access getAccess();
 
+    // optional string email = 5;
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     boolean hasEmail();
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     java.lang.String getEmail();
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
@@ -1249,9 +1238,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.UserData}
    */
   public static final class UserData extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.UserData)
-      UserDataOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements UserDataOrBuilder {
     // Use UserData.newBuilder() to construct.
     private UserData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -1303,15 +1291,13 @@ public final class PreRegProto {
               break;
             }
             case 18: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              name_ = bs;
+              name_ = input.readBytes();
               break;
             }
             case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              username_ = bs;
+              username_ = input.readBytes();
               break;
             }
             case 32: {
@@ -1326,9 +1312,8 @@ public final class PreRegProto {
               break;
             }
             case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              email_ = bs;
+              email_ = input.readBytes();
               break;
             }
           }
@@ -1462,31 +1447,33 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
+    // optional int32 id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
-     * <code>required int32 id = 1 [default = 0];</code>
+     * <code>optional int32 id = 1;</code>
      */
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 id = 1 [default = 0];</code>
+     * <code>optional int32 id = 1;</code>
      */
     public int getId() {
       return id_;
     }
 
+    // optional string name = 2;
     public static final int NAME_FIELD_NUMBER = 2;
     private java.lang.Object name_;
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1503,7 +1490,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string name = 2 [default = ""];</code>
+     * <code>optional string name = 2;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1519,16 +1506,17 @@ public final class PreRegProto {
       }
     }
 
+    // optional string username = 3;
     public static final int USERNAME_FIELD_NUMBER = 3;
     private java.lang.Object username_;
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     public boolean hasUsername() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -1545,7 +1533,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string username = 3 [default = ""];</code>
+     * <code>optional string username = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -1561,6 +1549,7 @@ public final class PreRegProto {
       }
     }
 
+    // optional .base.UserData.Access access = 4;
     public static final int ACCESS_FIELD_NUMBER = 4;
     private com.prereg.base.data.PreRegProto.UserData.Access access_;
     /**
@@ -1576,16 +1565,17 @@ public final class PreRegProto {
       return access_;
     }
 
+    // optional string email = 5;
     public static final int EMAIL_FIELD_NUMBER = 5;
     private java.lang.Object email_;
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     public boolean hasEmail() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
@@ -1602,7 +1592,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>optional string email = 5 [default = ""];</code>
+     * <code>optional string email = 5;</code>
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
@@ -1628,21 +1618,8 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUsername()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -1776,9 +1753,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.UserData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.UserData)
-        com.prereg.base.data.PreRegProto.UserDataOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.UserDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_UserData_descriptor;
@@ -1911,18 +1887,6 @@ public final class PreRegProto {
       }
 
       public final boolean isInitialized() {
-        if (!hasId()) {
-          
-          return false;
-        }
-        if (!hasName()) {
-          
-          return false;
-        }
-        if (!hasUsername()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -1945,21 +1909,22 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // optional int32 id = 1;
       private int id_ ;
       /**
-       * <code>required int32 id = 1 [default = 0];</code>
+       * <code>optional int32 id = 1;</code>
        */
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 id = 1 [default = 0];</code>
+       * <code>optional int32 id = 1;</code>
        */
       public int getId() {
         return id_;
       }
       /**
-       * <code>required int32 id = 1 [default = 0];</code>
+       * <code>optional int32 id = 1;</code>
        */
       public Builder setId(int value) {
         bitField0_ |= 0x00000001;
@@ -1968,7 +1933,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 id = 1 [default = 0];</code>
+       * <code>optional int32 id = 1;</code>
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1977,32 +1942,30 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional string name = 2;
       private java.lang.Object name_ = "";
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public boolean hasName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            name_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2018,7 +1981,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -2031,7 +1994,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2040,7 +2003,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string name = 2 [default = ""];</code>
+       * <code>optional string name = 2;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2053,32 +2016,30 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional string username = 3;
       private java.lang.Object username_ = "";
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public boolean hasUsername() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            username_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
@@ -2094,7 +2055,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public Builder setUsername(
           java.lang.String value) {
@@ -2107,7 +2068,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2116,7 +2077,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string username = 3 [default = ""];</code>
+       * <code>optional string username = 3;</code>
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
@@ -2129,6 +2090,7 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional .base.UserData.Access access = 4;
       private com.prereg.base.data.PreRegProto.UserData.Access access_ = com.prereg.base.data.PreRegProto.UserData.Access.ADMIN;
       /**
        * <code>optional .base.UserData.Access access = 4;</code>
@@ -2164,32 +2126,30 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional string email = 5;
       private java.lang.Object email_ = "";
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public boolean hasEmail() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            email_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          email_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
@@ -2205,7 +2165,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public Builder setEmail(
           java.lang.String value) {
@@ -2218,7 +2178,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public Builder clearEmail() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2227,7 +2187,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>optional string email = 5 [default = ""];</code>
+       * <code>optional string email = 5;</code>
        */
       public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
@@ -2251,98 +2211,105 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.UserData)
   }
 
-  public interface CourseDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.CourseData)
-      com.google.protobuf.MessageOrBuilder {
+  public interface CourseDataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // optional int32 CRN = 1;
     /**
-     * <code>required int32 CRN = 1;</code>
+     * <code>optional int32 CRN = 1;</code>
      */
     boolean hasCRN();
     /**
-     * <code>required int32 CRN = 1;</code>
+     * <code>optional int32 CRN = 1;</code>
      */
     int getCRN();
 
+    // optional int32 sectionNumber = 2;
     /**
-     * <code>required int32 sectionNumber = 2;</code>
+     * <code>optional int32 sectionNumber = 2;</code>
      */
     boolean hasSectionNumber();
     /**
-     * <code>required int32 sectionNumber = 2;</code>
+     * <code>optional int32 sectionNumber = 2;</code>
      */
     int getSectionNumber();
 
+    // optional .base.UserData instructor = 3;
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     boolean hasInstructor();
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     com.prereg.base.data.PreRegProto.UserData getInstructor();
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     com.prereg.base.data.PreRegProto.UserDataOrBuilder getInstructorOrBuilder();
 
+    // optional string courseName = 4;
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     boolean hasCourseName();
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     java.lang.String getCourseName();
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     com.google.protobuf.ByteString
         getCourseNameBytes();
 
+    // optional string time = 5;
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     boolean hasTime();
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     java.lang.String getTime();
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     com.google.protobuf.ByteString
         getTimeBytes();
 
+    // optional string classRoom = 6;
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     boolean hasClassRoom();
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     java.lang.String getClassRoom();
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     com.google.protobuf.ByteString
         getClassRoomBytes();
 
+    // optional int32 capacity = 7;
     /**
-     * <code>required int32 capacity = 7;</code>
+     * <code>optional int32 capacity = 7;</code>
      */
     boolean hasCapacity();
     /**
-     * <code>required int32 capacity = 7;</code>
+     * <code>optional int32 capacity = 7;</code>
      */
     int getCapacity();
 
+    // optional int32 max_capacity = 8;
     /**
-     * <code>required int32 max_capacity = 8;</code>
+     * <code>optional int32 max_capacity = 8;</code>
      */
     boolean hasMaxCapacity();
     /**
-     * <code>required int32 max_capacity = 8;</code>
+     * <code>optional int32 max_capacity = 8;</code>
      */
     int getMaxCapacity();
   }
@@ -2350,9 +2317,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.CourseData}
    */
   public static final class CourseData extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.CourseData)
-      CourseDataOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements CourseDataOrBuilder {
     // Use CourseData.newBuilder() to construct.
     private CourseData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2422,21 +2388,18 @@ public final class PreRegProto {
               break;
             }
             case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              courseName_ = bs;
+              courseName_ = input.readBytes();
               break;
             }
             case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              time_ = bs;
+              time_ = input.readBytes();
               break;
             }
             case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000020;
-              classRoom_ = bs;
+              classRoom_ = input.readBytes();
               break;
             }
             case 56: {
@@ -2489,67 +2452,71 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
+    // optional int32 CRN = 1;
     public static final int CRN_FIELD_NUMBER = 1;
     private int cRN_;
     /**
-     * <code>required int32 CRN = 1;</code>
+     * <code>optional int32 CRN = 1;</code>
      */
     public boolean hasCRN() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required int32 CRN = 1;</code>
+     * <code>optional int32 CRN = 1;</code>
      */
     public int getCRN() {
       return cRN_;
     }
 
+    // optional int32 sectionNumber = 2;
     public static final int SECTIONNUMBER_FIELD_NUMBER = 2;
     private int sectionNumber_;
     /**
-     * <code>required int32 sectionNumber = 2;</code>
+     * <code>optional int32 sectionNumber = 2;</code>
      */
     public boolean hasSectionNumber() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required int32 sectionNumber = 2;</code>
+     * <code>optional int32 sectionNumber = 2;</code>
      */
     public int getSectionNumber() {
       return sectionNumber_;
     }
 
+    // optional .base.UserData instructor = 3;
     public static final int INSTRUCTOR_FIELD_NUMBER = 3;
     private com.prereg.base.data.PreRegProto.UserData instructor_;
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     public boolean hasInstructor() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     public com.prereg.base.data.PreRegProto.UserData getInstructor() {
       return instructor_;
     }
     /**
-     * <code>required .base.UserData instructor = 3;</code>
+     * <code>optional .base.UserData instructor = 3;</code>
      */
     public com.prereg.base.data.PreRegProto.UserDataOrBuilder getInstructorOrBuilder() {
       return instructor_;
     }
 
+    // optional string courseName = 4;
     public static final int COURSENAME_FIELD_NUMBER = 4;
     private java.lang.Object courseName_;
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     public boolean hasCourseName() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     public java.lang.String getCourseName() {
       java.lang.Object ref = courseName_;
@@ -2566,7 +2533,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string courseName = 4;</code>
+     * <code>optional string courseName = 4;</code>
      */
     public com.google.protobuf.ByteString
         getCourseNameBytes() {
@@ -2582,16 +2549,17 @@ public final class PreRegProto {
       }
     }
 
+    // optional string time = 5;
     public static final int TIME_FIELD_NUMBER = 5;
     private java.lang.Object time_;
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     public boolean hasTime() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     public java.lang.String getTime() {
       java.lang.Object ref = time_;
@@ -2608,7 +2576,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string time = 5;</code>
+     * <code>optional string time = 5;</code>
      */
     public com.google.protobuf.ByteString
         getTimeBytes() {
@@ -2624,16 +2592,17 @@ public final class PreRegProto {
       }
     }
 
+    // optional string classRoom = 6;
     public static final int CLASSROOM_FIELD_NUMBER = 6;
     private java.lang.Object classRoom_;
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     public boolean hasClassRoom() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     public java.lang.String getClassRoom() {
       java.lang.Object ref = classRoom_;
@@ -2650,7 +2619,7 @@ public final class PreRegProto {
       }
     }
     /**
-     * <code>required string classRoom = 6;</code>
+     * <code>optional string classRoom = 6;</code>
      */
     public com.google.protobuf.ByteString
         getClassRoomBytes() {
@@ -2666,31 +2635,33 @@ public final class PreRegProto {
       }
     }
 
+    // optional int32 capacity = 7;
     public static final int CAPACITY_FIELD_NUMBER = 7;
     private int capacity_;
     /**
-     * <code>required int32 capacity = 7;</code>
+     * <code>optional int32 capacity = 7;</code>
      */
     public boolean hasCapacity() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>required int32 capacity = 7;</code>
+     * <code>optional int32 capacity = 7;</code>
      */
     public int getCapacity() {
       return capacity_;
     }
 
+    // optional int32 max_capacity = 8;
     public static final int MAX_CAPACITY_FIELD_NUMBER = 8;
     private int maxCapacity_;
     /**
-     * <code>required int32 max_capacity = 8;</code>
+     * <code>optional int32 max_capacity = 8;</code>
      */
     public boolean hasMaxCapacity() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>required int32 max_capacity = 8;</code>
+     * <code>optional int32 max_capacity = 8;</code>
      */
     public int getMaxCapacity() {
       return maxCapacity_;
@@ -2709,45 +2680,8 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasCRN()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSectionNumber()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasInstructor()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCourseName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasClassRoom()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCapacity()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMaxCapacity()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getInstructor().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -2902,9 +2836,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.CourseData}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.CourseData)
-        com.prereg.base.data.PreRegProto.CourseDataOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.CourseDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_CourseData_descriptor;
@@ -3073,42 +3006,6 @@ public final class PreRegProto {
       }
 
       public final boolean isInitialized() {
-        if (!hasCRN()) {
-          
-          return false;
-        }
-        if (!hasSectionNumber()) {
-          
-          return false;
-        }
-        if (!hasInstructor()) {
-          
-          return false;
-        }
-        if (!hasCourseName()) {
-          
-          return false;
-        }
-        if (!hasTime()) {
-          
-          return false;
-        }
-        if (!hasClassRoom()) {
-          
-          return false;
-        }
-        if (!hasCapacity()) {
-          
-          return false;
-        }
-        if (!hasMaxCapacity()) {
-          
-          return false;
-        }
-        if (!getInstructor().isInitialized()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -3131,21 +3028,22 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // optional int32 CRN = 1;
       private int cRN_ ;
       /**
-       * <code>required int32 CRN = 1;</code>
+       * <code>optional int32 CRN = 1;</code>
        */
       public boolean hasCRN() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required int32 CRN = 1;</code>
+       * <code>optional int32 CRN = 1;</code>
        */
       public int getCRN() {
         return cRN_;
       }
       /**
-       * <code>required int32 CRN = 1;</code>
+       * <code>optional int32 CRN = 1;</code>
        */
       public Builder setCRN(int value) {
         bitField0_ |= 0x00000001;
@@ -3154,7 +3052,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 CRN = 1;</code>
+       * <code>optional int32 CRN = 1;</code>
        */
       public Builder clearCRN() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3163,21 +3061,22 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional int32 sectionNumber = 2;
       private int sectionNumber_ ;
       /**
-       * <code>required int32 sectionNumber = 2;</code>
+       * <code>optional int32 sectionNumber = 2;</code>
        */
       public boolean hasSectionNumber() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required int32 sectionNumber = 2;</code>
+       * <code>optional int32 sectionNumber = 2;</code>
        */
       public int getSectionNumber() {
         return sectionNumber_;
       }
       /**
-       * <code>required int32 sectionNumber = 2;</code>
+       * <code>optional int32 sectionNumber = 2;</code>
        */
       public Builder setSectionNumber(int value) {
         bitField0_ |= 0x00000002;
@@ -3186,7 +3085,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 sectionNumber = 2;</code>
+       * <code>optional int32 sectionNumber = 2;</code>
        */
       public Builder clearSectionNumber() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3195,17 +3094,18 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional .base.UserData instructor = 3;
       private com.prereg.base.data.PreRegProto.UserData instructor_ = com.prereg.base.data.PreRegProto.UserData.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder> instructorBuilder_;
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public boolean hasInstructor() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public com.prereg.base.data.PreRegProto.UserData getInstructor() {
         if (instructorBuilder_ == null) {
@@ -3215,7 +3115,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public Builder setInstructor(com.prereg.base.data.PreRegProto.UserData value) {
         if (instructorBuilder_ == null) {
@@ -3231,7 +3131,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public Builder setInstructor(
           com.prereg.base.data.PreRegProto.UserData.Builder builderForValue) {
@@ -3245,7 +3145,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public Builder mergeInstructor(com.prereg.base.data.PreRegProto.UserData value) {
         if (instructorBuilder_ == null) {
@@ -3264,7 +3164,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public Builder clearInstructor() {
         if (instructorBuilder_ == null) {
@@ -3277,7 +3177,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public com.prereg.base.data.PreRegProto.UserData.Builder getInstructorBuilder() {
         bitField0_ |= 0x00000004;
@@ -3285,7 +3185,7 @@ public final class PreRegProto {
         return getInstructorFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       public com.prereg.base.data.PreRegProto.UserDataOrBuilder getInstructorOrBuilder() {
         if (instructorBuilder_ != null) {
@@ -3295,7 +3195,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required .base.UserData instructor = 3;</code>
+       * <code>optional .base.UserData instructor = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder> 
@@ -3303,7 +3203,7 @@ public final class PreRegProto {
         if (instructorBuilder_ == null) {
           instructorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               com.prereg.base.data.PreRegProto.UserData, com.prereg.base.data.PreRegProto.UserData.Builder, com.prereg.base.data.PreRegProto.UserDataOrBuilder>(
-                  getInstructor(),
+                  instructor_,
                   getParentForChildren(),
                   isClean());
           instructor_ = null;
@@ -3311,32 +3211,30 @@ public final class PreRegProto {
         return instructorBuilder_;
       }
 
+      // optional string courseName = 4;
       private java.lang.Object courseName_ = "";
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public boolean hasCourseName() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public java.lang.String getCourseName() {
         java.lang.Object ref = courseName_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            courseName_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          courseName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public com.google.protobuf.ByteString
           getCourseNameBytes() {
@@ -3352,7 +3250,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public Builder setCourseName(
           java.lang.String value) {
@@ -3365,7 +3263,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public Builder clearCourseName() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -3374,7 +3272,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string courseName = 4;</code>
+       * <code>optional string courseName = 4;</code>
        */
       public Builder setCourseNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3387,32 +3285,30 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional string time = 5;
       private java.lang.Object time_ = "";
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public boolean hasTime() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public java.lang.String getTime() {
         java.lang.Object ref = time_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            time_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          time_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public com.google.protobuf.ByteString
           getTimeBytes() {
@@ -3428,7 +3324,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public Builder setTime(
           java.lang.String value) {
@@ -3441,7 +3337,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3450,7 +3346,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string time = 5;</code>
+       * <code>optional string time = 5;</code>
        */
       public Builder setTimeBytes(
           com.google.protobuf.ByteString value) {
@@ -3463,32 +3359,30 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional string classRoom = 6;
       private java.lang.Object classRoom_ = "";
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public boolean hasClassRoom() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public java.lang.String getClassRoom() {
         java.lang.Object ref = classRoom_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            classRoom_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          classRoom_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public com.google.protobuf.ByteString
           getClassRoomBytes() {
@@ -3504,7 +3398,7 @@ public final class PreRegProto {
         }
       }
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public Builder setClassRoom(
           java.lang.String value) {
@@ -3517,7 +3411,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public Builder clearClassRoom() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -3526,7 +3420,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required string classRoom = 6;</code>
+       * <code>optional string classRoom = 6;</code>
        */
       public Builder setClassRoomBytes(
           com.google.protobuf.ByteString value) {
@@ -3539,21 +3433,22 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional int32 capacity = 7;
       private int capacity_ ;
       /**
-       * <code>required int32 capacity = 7;</code>
+       * <code>optional int32 capacity = 7;</code>
        */
       public boolean hasCapacity() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>required int32 capacity = 7;</code>
+       * <code>optional int32 capacity = 7;</code>
        */
       public int getCapacity() {
         return capacity_;
       }
       /**
-       * <code>required int32 capacity = 7;</code>
+       * <code>optional int32 capacity = 7;</code>
        */
       public Builder setCapacity(int value) {
         bitField0_ |= 0x00000040;
@@ -3562,7 +3457,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 capacity = 7;</code>
+       * <code>optional int32 capacity = 7;</code>
        */
       public Builder clearCapacity() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -3571,21 +3466,22 @@ public final class PreRegProto {
         return this;
       }
 
+      // optional int32 max_capacity = 8;
       private int maxCapacity_ ;
       /**
-       * <code>required int32 max_capacity = 8;</code>
+       * <code>optional int32 max_capacity = 8;</code>
        */
       public boolean hasMaxCapacity() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>required int32 max_capacity = 8;</code>
+       * <code>optional int32 max_capacity = 8;</code>
        */
       public int getMaxCapacity() {
         return maxCapacity_;
       }
       /**
-       * <code>required int32 max_capacity = 8;</code>
+       * <code>optional int32 max_capacity = 8;</code>
        */
       public Builder setMaxCapacity(int value) {
         bitField0_ |= 0x00000080;
@@ -3594,7 +3490,7 @@ public final class PreRegProto {
         return this;
       }
       /**
-       * <code>required int32 max_capacity = 8;</code>
+       * <code>optional int32 max_capacity = 8;</code>
        */
       public Builder clearMaxCapacity() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -3614,10 +3510,10 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.CourseData)
   }
 
-  public interface UserListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.UserList)
-      com.google.protobuf.MessageOrBuilder {
+  public interface UserListOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // repeated .base.UserData user = 1;
     /**
      * <code>repeated .base.UserData user = 1;</code>
      */
@@ -3646,9 +3542,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.UserList}
    */
   public static final class UserList extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.UserList)
-      UserListOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements UserListOrBuilder {
     // Use UserList.newBuilder() to construct.
     private UserList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3744,6 +3639,7 @@ public final class PreRegProto {
       return PARSER;
     }
 
+    // repeated .base.UserData user = 1;
     public static final int USER_FIELD_NUMBER = 1;
     private java.util.List<com.prereg.base.data.PreRegProto.UserData> user_;
     /**
@@ -3785,15 +3681,8 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
-      for (int i = 0; i < getUserCount(); i++) {
-        if (!getUser(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -3899,9 +3788,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.UserList}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.UserList)
-        com.prereg.base.data.PreRegProto.UserListOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.UserListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_UserList_descriptor;
@@ -4023,12 +3911,6 @@ public final class PreRegProto {
       }
 
       public final boolean isInitialized() {
-        for (int i = 0; i < getUserCount(); i++) {
-          if (!getUser(i).isInitialized()) {
-            
-            return false;
-          }
-        }
         return true;
       }
 
@@ -4051,6 +3933,7 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // repeated .base.UserData user = 1;
       private java.util.List<com.prereg.base.data.PreRegProto.UserData> user_ =
         java.util.Collections.emptyList();
       private void ensureUserIsMutable() {
@@ -4192,8 +4075,7 @@ public final class PreRegProto {
           java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.UserData> values) {
         if (userBuilder_ == null) {
           ensureUserIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, user_);
+          super.addAll(values, user_);
           onChanged();
         } else {
           userBuilder_.addAllMessages(values);
@@ -4302,10 +4184,10 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.UserList)
   }
 
-  public interface CourseListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.CourseList)
-      com.google.protobuf.MessageOrBuilder {
+  public interface CourseListOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // repeated .base.CourseData course = 1;
     /**
      * <code>repeated .base.CourseData course = 1;</code>
      */
@@ -4334,9 +4216,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.CourseList}
    */
   public static final class CourseList extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.CourseList)
-      CourseListOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements CourseListOrBuilder {
     // Use CourseList.newBuilder() to construct.
     private CourseList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -4432,6 +4313,7 @@ public final class PreRegProto {
       return PARSER;
     }
 
+    // repeated .base.CourseData course = 1;
     public static final int COURSE_FIELD_NUMBER = 1;
     private java.util.List<com.prereg.base.data.PreRegProto.CourseData> course_;
     /**
@@ -4473,15 +4355,8 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
-      for (int i = 0; i < getCourseCount(); i++) {
-        if (!getCourse(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -4587,9 +4462,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.CourseList}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.CourseList)
-        com.prereg.base.data.PreRegProto.CourseListOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.CourseListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_CourseList_descriptor;
@@ -4711,12 +4585,6 @@ public final class PreRegProto {
       }
 
       public final boolean isInitialized() {
-        for (int i = 0; i < getCourseCount(); i++) {
-          if (!getCourse(i).isInitialized()) {
-            
-            return false;
-          }
-        }
         return true;
       }
 
@@ -4739,6 +4607,7 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // repeated .base.CourseData course = 1;
       private java.util.List<com.prereg.base.data.PreRegProto.CourseData> course_ =
         java.util.Collections.emptyList();
       private void ensureCourseIsMutable() {
@@ -4880,8 +4749,7 @@ public final class PreRegProto {
           java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.CourseData> values) {
         if (courseBuilder_ == null) {
           ensureCourseIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, course_);
+          super.addAll(values, course_);
           onChanged();
         } else {
           courseBuilder_.addAllMessages(values);
@@ -4990,17 +4858,15 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.CourseList)
   }
 
-  public interface EmptyMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.EmptyMessage)
-      com.google.protobuf.MessageOrBuilder {
+  public interface EmptyMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
   }
   /**
    * Protobuf type {@code base.EmptyMessage}
    */
   public static final class EmptyMessage extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.EmptyMessage)
-      EmptyMessageOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements EmptyMessageOrBuilder {
     // Use EmptyMessage.newBuilder() to construct.
     private EmptyMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5089,8 +4955,7 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
       memoizedIsInitialized = 1;
       return true;
@@ -5190,9 +5055,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.EmptyMessage}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.EmptyMessage)
-        com.prereg.base.data.PreRegProto.EmptyMessageOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.EmptyMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_EmptyMessage_descriptor;
@@ -5303,10 +5167,10 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.EmptyMessage)
   }
 
-  public interface ReplyMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:base.ReplyMessage)
-      com.google.protobuf.MessageOrBuilder {
+  public interface ReplyMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
 
+    // required string replyMessage = 1;
     /**
      * <code>required string replyMessage = 1;</code>
      */
@@ -5325,9 +5189,8 @@ public final class PreRegProto {
    * Protobuf type {@code base.ReplyMessage}
    */
   public static final class ReplyMessage extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:base.ReplyMessage)
-      ReplyMessageOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements ReplyMessageOrBuilder {
     // Use ReplyMessage.newBuilder() to construct.
     private ReplyMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -5374,9 +5237,8 @@ public final class PreRegProto {
               break;
             }
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              replyMessage_ = bs;
+              replyMessage_ = input.readBytes();
               break;
             }
           }
@@ -5419,6 +5281,7 @@ public final class PreRegProto {
     }
 
     private int bitField0_;
+    // required string replyMessage = 1;
     public static final int REPLYMESSAGE_FIELD_NUMBER = 1;
     private java.lang.Object replyMessage_;
     /**
@@ -5467,8 +5330,7 @@ public final class PreRegProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+      if (isInitialized != -1) return isInitialized == 1;
 
       if (!hasReplyMessage()) {
         memoizedIsInitialized = 0;
@@ -5579,9 +5441,8 @@ public final class PreRegProto {
      * Protobuf type {@code base.ReplyMessage}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:base.ReplyMessage)
-        com.prereg.base.data.PreRegProto.ReplyMessageOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.ReplyMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.prereg.base.data.PreRegProto.internal_static_base_ReplyMessage_descriptor;
@@ -5700,6 +5561,7 @@ public final class PreRegProto {
       }
       private int bitField0_;
 
+      // required string replyMessage = 1;
       private java.lang.Object replyMessage_ = "";
       /**
        * <code>required string replyMessage = 1;</code>
@@ -5713,12 +5575,9 @@ public final class PreRegProto {
       public java.lang.String getReplyMessage() {
         java.lang.Object ref = replyMessage_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            replyMessage_ = s;
-          }
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          replyMessage_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5787,42 +5646,42 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.ReplyMessage)
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_LoginRequestData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_LoginRequestData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_LoginResponseData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_LoginResponseData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_UserData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_UserData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_CourseData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_CourseData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_UserList_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_UserList_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_CourseList_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_CourseList_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_EmptyMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_EmptyMessage_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_ReplyMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -5839,81 +5698,81 @@ public final class PreRegProto {
       "\n\033PreRegBase/src/prereg.proto\022\004base\"6\n\020L" +
       "oginRequestData\022\020\n\010username\030\001 \002(\t\022\020\n\010pas" +
       "sword\030\002 \002(\t\"5\n\021LoginResponseData\022 \n\010user" +
-      "Data\030\001 \002(\0132\016.base.UserData\"\246\001\n\010UserData\022" +
-      "\r\n\002id\030\001 \002(\005:\0010\022\016\n\004name\030\002 \002(\t:\000\022\022\n\010userna" +
-      "me\030\003 \002(\t:\000\022%\n\006access\030\004 \001(\0162\025.base.UserDa" +
-      "ta.Access\022\017\n\005email\030\005 \001(\t:\000\"/\n\006Access\022\t\n\005" +
-      "ADMIN\020\000\022\r\n\tPROFESSOR\020\001\022\013\n\007STUDENT\020\002\"\261\001\n\n" +
-      "CourseData\022\013\n\003CRN\030\001 \002(\005\022\025\n\rsectionNumber" +
-      "\030\002 \002(\005\022\"\n\ninstructor\030\003 \002(\0132\016.base.UserDa",
-      "ta\022\022\n\ncourseName\030\004 \002(\t\022\014\n\004time\030\005 \002(\t\022\021\n\t" +
-      "classRoom\030\006 \002(\t\022\020\n\010capacity\030\007 \002(\005\022\024\n\014max" +
-      "_capacity\030\010 \002(\005\"(\n\010UserList\022\034\n\004user\030\001 \003(" +
-      "\0132\016.base.UserData\".\n\nCourseList\022 \n\006cours" +
-      "e\030\001 \003(\0132\020.base.CourseData\"\016\n\014EmptyMessag" +
-      "e\"$\n\014ReplyMessage\022\024\n\014replyMessage\030\001 \002(\tB" +
-      "#\n\024com.prereg.base.dataB\013PreRegProto"
+      "Data\030\001 \002(\0132\016.base.UserData\"\235\001\n\010UserData\022" +
+      "\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010username\030\003 " +
+      "\001(\t\022%\n\006access\030\004 \001(\0162\025.base.UserData.Acce" +
+      "ss\022\r\n\005email\030\005 \001(\t\"/\n\006Access\022\t\n\005ADMIN\020\000\022\r" +
+      "\n\tPROFESSOR\020\001\022\013\n\007STUDENT\020\002\"\261\001\n\nCourseDat" +
+      "a\022\013\n\003CRN\030\001 \001(\005\022\025\n\rsectionNumber\030\002 \001(\005\022\"\n" +
+      "\ninstructor\030\003 \001(\0132\016.base.UserData\022\022\n\ncou",
+      "rseName\030\004 \001(\t\022\014\n\004time\030\005 \001(\t\022\021\n\tclassRoom" +
+      "\030\006 \001(\t\022\020\n\010capacity\030\007 \001(\005\022\024\n\014max_capacity" +
+      "\030\010 \001(\005\"(\n\010UserList\022\034\n\004user\030\001 \003(\0132\016.base." +
+      "UserData\".\n\nCourseList\022 \n\006course\030\001 \003(\0132\020" +
+      ".base.CourseData\"\016\n\014EmptyMessage\"$\n\014Repl" +
+      "yMessage\022\024\n\014replyMessage\030\001 \002(\tB#\n\024com.pr" +
+      "ereg.base.dataB\013PreRegProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
+      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+        public com.google.protobuf.ExtensionRegistry assignDescriptors(
+            com.google.protobuf.Descriptors.FileDescriptor root) {
+          descriptor = root;
+          internal_static_base_LoginRequestData_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+          internal_static_base_LoginRequestData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_LoginRequestData_descriptor,
+              new java.lang.String[] { "Username", "Password", });
+          internal_static_base_LoginResponseData_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_base_LoginResponseData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_LoginResponseData_descriptor,
+              new java.lang.String[] { "UserData", });
+          internal_static_base_UserData_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+          internal_static_base_UserData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_UserData_descriptor,
+              new java.lang.String[] { "Id", "Name", "Username", "Access", "Email", });
+          internal_static_base_CourseData_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_base_CourseData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_CourseData_descriptor,
+              new java.lang.String[] { "CRN", "SectionNumber", "Instructor", "CourseName", "Time", "ClassRoom", "Capacity", "MaxCapacity", });
+          internal_static_base_UserList_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+          internal_static_base_UserList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_UserList_descriptor,
+              new java.lang.String[] { "User", });
+          internal_static_base_CourseList_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_base_CourseList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_CourseList_descriptor,
+              new java.lang.String[] { "Course", });
+          internal_static_base_EmptyMessage_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_base_EmptyMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_EmptyMessage_descriptor,
+              new java.lang.String[] { });
+          internal_static_base_ReplyMessage_descriptor =
+            getDescriptor().getMessageTypes().get(7);
+          internal_static_base_ReplyMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_ReplyMessage_descriptor,
+              new java.lang.String[] { "ReplyMessage", });
+          return null;
+        }
+      };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_base_LoginRequestData_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_base_LoginRequestData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_LoginRequestData_descriptor,
-        new java.lang.String[] { "Username", "Password", });
-    internal_static_base_LoginResponseData_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_base_LoginResponseData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_LoginResponseData_descriptor,
-        new java.lang.String[] { "UserData", });
-    internal_static_base_UserData_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_base_UserData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_UserData_descriptor,
-        new java.lang.String[] { "Id", "Name", "Username", "Access", "Email", });
-    internal_static_base_CourseData_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_base_CourseData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_CourseData_descriptor,
-        new java.lang.String[] { "CRN", "SectionNumber", "Instructor", "CourseName", "Time", "ClassRoom", "Capacity", "MaxCapacity", });
-    internal_static_base_UserList_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_base_UserList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_UserList_descriptor,
-        new java.lang.String[] { "User", });
-    internal_static_base_CourseList_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_base_CourseList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_CourseList_descriptor,
-        new java.lang.String[] { "Course", });
-    internal_static_base_EmptyMessage_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_base_EmptyMessage_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_EmptyMessage_descriptor,
-        new java.lang.String[] { });
-    internal_static_base_ReplyMessage_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_base_ReplyMessage_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_base_ReplyMessage_descriptor,
-        new java.lang.String[] { "ReplyMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

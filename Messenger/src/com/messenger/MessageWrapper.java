@@ -14,11 +14,11 @@ public class MessageWrapper {
         this.message = message;
     }
 
-    public MessageWrapper(MessengerProto.MessageType messageType, Message message) {
+    protected MessageWrapper(MessengerProto.MessageType messageType, Message message) {
         this(MessengerProto.MessageHeader.newBuilder().setMessageType(messageType).build(), message);
     }
 
-    public MessageWrapper(int messageCode,
+    protected MessageWrapper(int messageCode,
                           MessengerProto.MessageType messageType,
                           Message message) {
         this(MessengerProto.MessageHeader.newBuilder()
@@ -37,11 +37,15 @@ public class MessageWrapper {
         return message;
     }
 
-    public MessengerProto.MessageHeader getHeader() {
+    protected MessengerProto.MessageHeader getHeader() {
         return header;
     }
 
-    public void setMessage(Message message) {
+    public void setMessage(Message message)
+            throws IllegalArgumentException {
+        if (!message.getDefaultInstanceForType().equals(this.message.getDefaultInstanceForType())) {
+            throw new IllegalArgumentException("Message Argument doesn't cope with the required message content type.");
+        }
         this.message = message;
     }
 

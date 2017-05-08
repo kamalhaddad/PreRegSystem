@@ -61,7 +61,7 @@ public class MainUI extends JFrame
     private JButton btnCapacityRequest;
     private JButton btnRefreshSchedule;
 
-    public  DefaultListModel model;
+    public DefaultListModel model;
     private DefaultListModel model2;
     public DefaultListModel model3;
 
@@ -90,10 +90,11 @@ public class MainUI extends JFrame
 
     private JLabel lblSched;
 
-    public MainUI()
-    {
+    public MainUI() {
         setTitle("Login");
         setLayout(null);
+
+        clientSession = PreRegClientSession.getSession();
 
         isLoginUI = true;
 
@@ -121,7 +122,7 @@ public class MainUI extends JFrame
         lblUsername.setBounds(25, 130, 100, 25);
         txtPassword.setBounds(25, 200, 220, 25);
         txtUsername.setBounds(25, 150, 220, 25);
-        btnLogin.setBounds(85,310, 100, 25);
+        btnLogin.setBounds(85, 310, 100, 25);
 
         /* Course List Interface */
 
@@ -146,7 +147,7 @@ public class MainUI extends JFrame
         btnCourseRequest = new JButton("Request Course");
         lblSearch = new JLabel("Search By:");
         btnSearch = new JButton("Search");
-        String[] searchByStrings = {"CRN","Instructor Username","Course Name", "Department"};
+        String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name", "Department"};
         cbSearchBy = new JComboBox(searchByStrings);
         tfSearch = new JTextField();
         model3 = new DefaultListModel();
@@ -166,35 +167,34 @@ public class MainUI extends JFrame
         coursePanel.add(tfSearch);
 
 
-
-        CRNLabel.setBounds(15,40,50,25);
-        CRNTextField.setBounds(50, 40,75,25);
-        lblUName.setBounds(15,10, 240,25);
+        CRNLabel.setBounds(15, 40, 50, 25);
+        CRNTextField.setBounds(50, 40, 75, 25);
+        lblUName.setBounds(15, 10, 240, 25);
         lblTitles.setBounds(15, 205, 600, 25);
         courseListPane.setBounds(10, 230, 720, 200);
-        schedListPane.setBounds(15,530,250,200);
-        lblSched.setBounds(15,465,100,100);
-        btnRefreshSchedule.setBounds(115,500,150,25);
+        schedListPane.setBounds(15, 530, 250, 200);
+        lblSched.setBounds(15, 465, 100, 100);
+        btnRefreshSchedule.setBounds(115, 500, 150, 25);
 
 
         //btnMessages.setBounds(390, 10, 100, 25);
-        btnCapacityRequest.setBounds(15, 70, 135,25);
+        btnCapacityRequest.setBounds(15, 70, 135, 25);
 
         TimeChangeLabel.setBounds(15, 100, 185, 25);
         TimeChangeTextField.setBounds(200, 100, 150, 25);
         btnTimeChangeRequest.setBounds(360, 100, 185, 25);
 
-        ProfUNameLabel.setBounds(15,130,175,25);
-        ProfUNameTextField.setBounds(200, 130,125,25);
+        ProfUNameLabel.setBounds(15, 130, 175, 25);
+        ProfUNameTextField.setBounds(200, 130, 125, 25);
 
         CourseRequestLabel.setBounds(15, 165, 260, 25);
         CourseRequestTextField.setBounds(255, 165, 125, 25);
         btnCourseRequest.setBounds(385, 165, 125, 25);
 
-        lblSearch.setBounds(15,440,80,25);
-        cbSearchBy.setBounds(100,440,150,25);
-        tfSearch.setBounds(270,440,150,25);
-        btnSearch.setBounds(430,440,150,25);
+        lblSearch.setBounds(15, 440, 80, 25);
+        cbSearchBy.setBounds(100, 440, 150, 25);
+        tfSearch.setBounds(270, 440, 150, 25);
+        btnSearch.setBounds(430, 440, 150, 25);
 
 
         /* Messages Interface */
@@ -245,7 +245,7 @@ public class MainUI extends JFrame
         addWindowListener(winListener);
     }
 
-    public  void AddCourseInterface() {
+    public void AddCourseInterface() {
         if (isProfessor) {
 
         }
@@ -266,7 +266,7 @@ public class MainUI extends JFrame
         }
     }
 
-    public void setUserInfo(int id, String username, String title){
+    public void setUserInfo(int id, String username, String title) {
 
 //        User.init(id, username, title);
         lblUName.setText(clientSession.getUser().getUserName());
@@ -274,46 +274,38 @@ public class MainUI extends JFrame
         updateUITitle();
     }
 
-    public void updateUITitle()
-    {
+    public void updateUITitle() {
 //        setTitle(clientSession.getUser()..getUITitle());
     }
 
-    public void enableLoginInput(boolean enable)
-    {
+    public void enableLoginInput(boolean enable) {
         txtUsername.setEnabled(enable);
         txtPassword.setEnabled(enable);
     }
-    public static boolean isNumeric(String str)
-    {
-        try
-        {
+
+    public static boolean isNumeric(String str) {
+        try {
             double d = Double.parseDouble(str);
-        }
-        catch(NumberFormatException nfe)
-        {
+        } catch (NumberFormatException nfe) {
             return false;
         }
         return true;
     }
 
-    public void addCourse(String s){
+    public void addCourse(String s) {
         model.addElement(s);
     }
 
-    public void login()
-    {
+    public void login() {
         enableLoginInput(false);
 
-        if (txtUsername.getText().equals(""))
-        {
+        if (txtUsername.getText().equals("")) {
             UICore.showMessageDialog("Please enter your username.", "Error", JOptionPane.ERROR_MESSAGE);
             enableLoginInput(true);
             return;
         }
 
-        if (txtPassword.getPassword().length == 0)
-        {
+        if (txtPassword.getPassword().length == 0) {
             UICore.showMessageDialog("Please enter your password.", "Error", JOptionPane.ERROR_MESSAGE);
             enableLoginInput(true);
             return;
@@ -324,17 +316,18 @@ public class MainUI extends JFrame
             clientSession.init(txtUsername.getText(), String.valueOf(txtPassword.getPassword()), new MessageObserver() {
                 @Override
                 public void notify(MessageWrapper messageWrapper) {
-                    switch(messageWrapper.getMessageCode())
-                    {
+                    switch (messageWrapper.getMessageCode()) {
                         case PreRegMessageFactory.LOGIN_SUCCESS: /* Login is success */
-                            int accountGuid = ((PreRegProto.UserData)messageWrapper.getMessage()).getId();
+                            PreRegProto.LoginResponseData responseData = (PreRegProto.LoginResponseData) messageWrapper.getMessage();
+                            PreRegProto.UserData userData = responseData.getUserData();
+                            int accountGuid = userData.getId();
                             System.out.println(accountGuid);
-                            String accountUsername = ((PreRegProto.UserData)messageWrapper.getMessage()).getUsername();
+                            String accountUsername = userData.getUsername();
                             System.out.println(accountUsername);
-                            String accountTitle = ((PreRegProto.UserData)messageWrapper.getMessage()).getAccess().equals(PreRegProto.UserData.Access.PROFESSOR)? "Professor":"Student";
+                            String accountTitle = userData.getAccess().equals(PreRegProto.UserData.Access.PROFESSOR) ? "Professor" : "Student";
                             System.out.println(accountTitle);
 
-                            if(accountTitle.equals("Student"))
+                            if (accountTitle.equals("Student"))
                                 MainUI.isProfessor = false;
 
                             else if (accountTitle.equals("Professor"))
@@ -366,35 +359,29 @@ public class MainUI extends JFrame
     }
 
 
-    public void resetUI()
-    {
-        if (isLoginUI)
-        {
+    public void resetUI() {
+        if (isLoginUI) {
             txtPassword.setText("");
-        }
-        else
-        {
+        } else {
             model.clear();
 
         }
     }
 
 
-    ActionListener actListener = new ActionListener()
-    {
-        public void actionPerformed(ActionEvent e)
-        {
+    ActionListener actListener = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
             if (e.getSource().equals(btnLogin))
                 login();
 
-            if(e.getSource().equals(btnCourses)){
+            if (e.getSource().equals(btnCourses)) {
                 isCourseUI = true;
                 switchUI();
             }
 
-            if(e.getSource().equals(btnCapacityRequest)){
-                if(isNumeric(CRNTextField.getText().toString())) {
-                    int CRN = Integer.parseInt(CRNTextField.getText().toString().trim());
+            if (e.getSource().equals(btnCapacityRequest)) {
+                if (isNumeric(CRNTextField.getText())) {
+                    int CRN = Integer.parseInt(CRNTextField.getText().trim());
                     MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.CAPACITY_REQUEST);
                     PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setCRN(CRN).build();
                     messageWrapper.setMessage(courseData);
@@ -402,26 +389,21 @@ public class MainUI extends JFrame
                         clientSession.queueMessage(messageWrapper, new MessageObserver() {
                             @Override
                             public void notify(MessageWrapper messageWrapper) {
-                                if(messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)){
-                                    UICore.showMessageDialog(((PreRegProto.ReplyMessage)messageWrapper.getMessage()).getReplyMessage(),"", JOptionPane.ERROR_MESSAGE);
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                    UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
                                 }
                             }
                         });
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
-
-
-//                    Packet p = new Packet(CMSG_CAPACITY_REQUEST);
-//                    p.put(CRN);
-//                    NetworkManager.SendPacket(p);
                 }
             }
 
-            if(e.getSource().equals(btnTimeChangeRequest)){
-                if(!TimeChangeTextField.getText().equals("") && isNumeric(CRNTextField.getText().toString())){
+            if (e.getSource().equals(btnTimeChangeRequest)) {
+                if (!TimeChangeTextField.getText().equals("") && isNumeric(CRNTextField.getText())) {
                     String times = TimeChangeTextField.getText();
-                    int CRN = Integer.parseInt(CRNTextField.getText().toString().trim());
+                    int CRN = Integer.parseInt(CRNTextField.getText().trim());
                     MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.CHANGE_TIME_REQUEST);
                     PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setCRN(CRN).setTime(times).build();
                     messageWrapper.setMessage(courseData);
@@ -429,25 +411,20 @@ public class MainUI extends JFrame
                         clientSession.queueMessage(messageWrapper, new MessageObserver() {
                             @Override
                             public void notify(MessageWrapper messageWrapper) {
-                                if(messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
                                     UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
 
-                                    }
                                 }
+                            }
                         });
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
-
-//                    Packet p = new Packet(CMSG_TIME_REQUEST);
-//                    p.put(CRN);
-//                    p.put(times);
-//                    NetworkManager.SendPacket(p);
                 }
             }
 
-            if(e.getSource().equals(btnCourseRequest)){
-                if(!ProfUNameTextField.getText().equals("") && !CourseRequestTextField.getText().equals("")){
+            if (e.getSource().equals(btnCourseRequest)) {
+                if (!ProfUNameTextField.getText().equals("") && !CourseRequestTextField.getText().equals("")) {
 
                     String courseReq = CourseRequestTextField.getText();
                     String instructorUserName = ProfUNameTextField.getText();
@@ -459,7 +436,7 @@ public class MainUI extends JFrame
                         clientSession.queueMessage(messageWrapper, new MessageObserver() {
                             @Override
                             public void notify(MessageWrapper messageWrapper) {
-                                if(messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
                                     UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
 
                                 }
@@ -469,27 +446,19 @@ public class MainUI extends JFrame
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
-//                    Packet p = new Packet(CMSG_COURSE_REQUEST);
-//                    p.put(courseReq);
-//                    p.put(instructorUserName);
-//                    NetworkManager.SendPacket(p);
                 }
             }
 
-            if(e.getSource().equals(btnSearch)){
+            if (e.getSource().equals(btnSearch)) {
                 model.clear();
+                String searchTerm = tfSearch.getText();
 
-//                Packet p = new Packet(CMSG_COURSE_SEARCH);
-//
-//                p.put(cbSearchBy.getSelectedItem());
-//
-
-                String searchTerm = tfSearch.getText().trim().equals("")?"All Courses":tfSearch.getText();
-
-//                NetworkManager.SendPacket(p);
-                MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.OPEN_COURSE_REQUEST);
-                PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setCourseName((String)cbSearchBy.getSelectedItem())
-                        .setInstructor(PreRegProto.UserData.newBuilder().setUsername(searchTerm).build()).build();
+                MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.COURSES_SEARCH);
+                PreRegProto.CourseData.Builder queryBuilder = PreRegProto.CourseData.newBuilder();
+                if (cbSearchBy.getSelectedItem().toString().equals("CRN")) {
+                    queryBuilder.setCRN(Integer.parseInt(searchTerm));
+                }
+                PreRegProto.CourseData courseData = queryBuilder.build();
                 messageWrapper.setMessage(courseData);
                 try {
                     clientSession.queueMessage(messageWrapper, new MessageObserver() {
@@ -498,12 +467,12 @@ public class MainUI extends JFrame
                             model.clear();
                             java.util.List<PreRegProto.CourseData> courses = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
 
-                            for (PreRegProto.CourseData courseData: courses) {
+                            for (PreRegProto.CourseData courseData : courses) {
 
-                                String course = new String(courseData.getCRN() + "   " + courseData.getSectionNumber() +
-                                        "                    " + courseData.getInstructor().getUsername()+ "         " +
-                                        courseData.getCourseName() + "  " + courseData.getTime()+ "    " + courseData.getClassRoom()
-                                        +"       "+ courseData.getCapacity()+"   "+courseData.getMaxCapacity());
+                                String course = courseData.getCRN() + "   " + courseData.getSectionNumber() +
+                                        "                    " + courseData.getInstructor().getUsername() + "         " +
+                                        courseData.getCourseName() + "  " + courseData.getTime() + "    " + courseData.getClassRoom()
+                                        + "       " + courseData.getCapacity() + "   " + courseData.getMaxCapacity();
                                 addCourse(course);
 
                             }
@@ -516,11 +485,8 @@ public class MainUI extends JFrame
 
             }
 
-            if(e.getSource().equals(btnRefreshSchedule)){
+            if (e.getSource().equals(btnRefreshSchedule)) {
                 model3.clear();
-//                Packet p = new Packet(CMSG_GET_SCHED_LIST);
-//                NetworkManager.SendPacket(p);
-
                 MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.GET_SCHEDULE_REQUEST);
                 try {
                     clientSession.queueMessage(messageWrapper, new MessageObserver() {
@@ -529,78 +495,61 @@ public class MainUI extends JFrame
                             model3.clear();
                             java.util.List<PreRegProto.CourseData> scheds = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
 
-                            for (PreRegProto.CourseData courseData: scheds) {
-
-                                String sched = new String(
-                                        courseData.getCourseName() + "  " + courseData.getTime());
+                            for (PreRegProto.CourseData courseData : scheds) {
+                                String sched = courseData.getCourseName() + "  " + courseData.getTime();
                                 model3.addElement(sched);
-
                             }
-
-
-
-
-
                         }
                     });
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
-
-
         }
     };
 
 
-    KeyListener loginKeyListener = new KeyAdapter()
-    {
-        public void keyReleased(KeyEvent e)
-        {
+    KeyListener loginKeyListener = new KeyAdapter() {
+        public void keyReleased(KeyEvent e) {
             // Only handle enter key in Chat Interface.
             if (e.getKeyCode() == KeyEvent.VK_ENTER)
                 login();
         }
     };
 
-    WindowListener winListener = new WindowAdapter()
-    {
-        public void windowClosing(WindowEvent e)
-        {
+    WindowListener winListener = new WindowAdapter() {
+        public void windowClosing(WindowEvent e) {
             // Only logout when client is logged in
             if (!isLoginUI)
 //                NetworkManager.SendPacket(new Packet(CMSG_LOGOUT));
 
-            System.exit(0);
+                System.exit(0);
         }
     };
 
-    public static final class UISwitcher implements Runnable
-    {
-        public void run()
-        {
+    public static final class UISwitcher implements Runnable {
+        public void run() {
             int movement = -3;
-            if(isLoginUI) {
+            if (isLoginUI) {
                 isLoginUI = !isLoginUI;
                 movement = -3;
-            }
-            else if(isCourseUI) {
+            } else if (isCourseUI) {
                 isCourseUI = !isCourseUI;
                 movement = 3;
-            }
-            else if(isMessageUI){
+            } else if (isMessageUI) {
                 isMessageUI = !isMessageUI;
                 movement = -3;
             }
 
-            for(int i = 0; i < 315; i++)
-            {
+            for (int i = 0; i < 315; i++) {
                 loginPanel.setLocation(loginPanel.getX() + movement, 0);
                 coursePanel.setLocation(coursePanel.getX() + movement, 0);
                 messagePanel.setLocation(messagePanel.getX() + movement, 0);
 
-                try { Thread.sleep(2); }
-                catch(Exception e) {}
+                try {
+                    Thread.sleep(2);
+                } catch (Exception e) {
+                }
             }
 
         }

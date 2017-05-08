@@ -1,15 +1,11 @@
 package com.messenger;
 
 
-import com.google.protobuf.Message;
 import com.messenger.protobuf.MessengerProto;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class Messenger {
     private MessageFactory messageFactory;
@@ -38,6 +34,7 @@ public class Messenger {
         if (message == null) {
             throw new IllegalStateException("unknown message");
         }
+        message.setMessageCode(header.getCode());
         message.setMessage(message.getMessage().getParserForType().parseDelimitedFrom(receiveStream));
         return message;
     }

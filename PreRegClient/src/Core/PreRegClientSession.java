@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 
-//TODO: Refactor this class to make it abstract
+//TODO: Refactor this class to make it abstract and work for any application
 public class PreRegClientSession extends Thread implements MessageSubject {
 
     private Socket socket;
@@ -34,10 +34,13 @@ public class PreRegClientSession extends Thread implements MessageSubject {
 
     private Queue<MessageObserver> messageObserverQueue;
 
+    private PreRegMessageFactory preRegMessageFactory;
+
     private PreRegClientSession() {
         observersLock = new ReentrantLock();
         messageObservers = new HashMap<>();
         messageObserverQueue = new LinkedList<>();
+        preRegMessageFactory = new PreRegMessageFactory();
     }
 
     public static PreRegClientSession getSession() {
@@ -49,7 +52,7 @@ public class PreRegClientSession extends Thread implements MessageSubject {
 
     public void init(String username, String password, MessageObserver loginObserver)
             throws IOException, IllegalStateException {
-        socket = new Socket("127.0.0.1", 6769);
+        socket = new Socket("127.0.0.1", 5050);
         messenger = new Messenger(new PreRegMessageFactory(),
                 new BufferedInputStream(socket.getInputStream()),
                 new BufferedOutputStream(socket.getOutputStream()));
@@ -57,17 +60,17 @@ public class PreRegClientSession extends Thread implements MessageSubject {
         PreRegProto.LoginRequestData loginData = PreRegProto.LoginRequestData.newBuilder().setUsername(username)
                 .setPassword(password).build();
 
-        MessageWrapper loginMessage = new MessageWrapper(PreRegMessageFactory.LOGIN_REQUEST, loginData);
+        MessageWrapper loginMessage = preRegMessageFactory.createMessage(PreRegMessageFactory.LOGIN_REQUEST);
+
+        loginMessage.setMessage(loginData);
 
         messenger.sendMessage(loginMessage);
 
         MessageWrapper loginResponse = messenger.receiveMessage();
-        if (loginResponse.getMessageCode() == PreRegMessageFactory.LOGIN_FAILURE) {
-            throw new IllegalStateException("Login Failed");
-        }
-        loginObserver.notify(loginResponse);
         PreRegProto.UserData userData = ((PreRegProto.LoginResponseData) loginResponse.getMessage()).getUserData();
         user = new User(userData);
+
+        loginObserver.notify(loginResponse);
     }
 
     public void run() {

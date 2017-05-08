@@ -18,22 +18,22 @@ message UserData {
         PROFESSOR = 1;
         STUDENT = 2;
     }
-    required int32 id = 1 [default = 0];
-    required string name = 2 [default = ""];
-    required string username = 3 [default = ""];
+    optional int32 id = 1;
+    optional string name = 2;
+    optional string username = 3;
     optional Access access = 4;
-    optional string email = 5 [default = ""];
+    optional string email = 5;
 }
 
 message CourseData {
-    required int32 CRN = 1;
-    required int32 sectionNumber = 2;
-    required UserData instructor = 3;
-    required string courseName = 4;
-    required string time = 5;
-    required string classRoom = 6;
-    required int32 capacity = 7;
-    required int32 max_capacity = 8;
+    optional int32 CRN = 1;
+    optional int32 sectionNumber = 2;
+    optional UserData instructor = 3;
+    optional string courseName = 4;
+    optional string time = 5;
+    optional string classRoom = 6;
+    optional int32 capacity = 7;
+    optional int32 max_capacity = 8;
 }
 
 message UserList {

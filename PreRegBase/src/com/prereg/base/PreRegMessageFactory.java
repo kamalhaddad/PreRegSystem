@@ -6,12 +6,13 @@ import com.messenger.MessageWrapper;
 import com.messenger.protobuf.MessengerProto;
 import com.prereg.base.data.PreRegProto;
 
-public class PreRegMessageFactory implements MessageFactory {
+public class PreRegMessageFactory extends MessageFactory {
 
     public static final int UNKNOWN = 0;
     public static final int LOGIN_SUCCESS = 1;
     public static final int LOGIN_FAILURE = 2;
     public static final int SUCCESS = 3;
+    public static final int FAILURE = 4;
 
     public static final MessengerProto.MessageType EMPTY_MESSAGE =
             MessengerProto.MessageType.newBuilder().setType("EMPTY_MESSAGE").build();
@@ -61,12 +62,30 @@ public class PreRegMessageFactory implements MessageFactory {
         else if (messageType.equals(COURSES_SEARCH)) {
             message = PreRegProto.CourseData.getDefaultInstance();
         }
-        else if(messageType.equals(OPEN_COURSE_REQUEST)) {
+        else if (messageType.equals(COURSES_SEARCH_REPLY)) {
             message = PreRegProto.CourseList.getDefaultInstance();
+        }
+        else if(messageType.equals(OPEN_COURSE_REQUEST)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(CHANGE_TIME_REQUEST)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_SCHEDULE_REQUEST)) {
+            message = PreRegProto.EmptyMessage.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_SCHEDULE_RESPONSE)) {
+            message = PreRegProto.CourseList.getDefaultInstance();
+        }
+        else if(messageType.equals(CAPACITY_REQUEST)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(REPLY_MESSAGE)) {
+            message = PreRegProto.ReplyMessage.getDefaultInstance();
         }
         else {
             return null;
         }
-        return new MessageWrapper(messageType, message);
+        return this.createMessage(messageType, message);
     }
 }
