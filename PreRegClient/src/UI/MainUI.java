@@ -60,15 +60,22 @@ public class MainUI extends JFrame
 
     private JButton btnCapacityRequest;
     private JButton btnRefreshSchedule;
+    private JButton btnRefreshRequests;
+
 
     public DefaultListModel model;
     private DefaultListModel model2;
     public DefaultListModel model3;
+    public DefaultListModel model4;
+
 
     private JList messageList;
     private JList schedList;
+    private JList RequestList;
     private JScrollPane messageListPane;
     private JScrollPane schedListPane;
+    private JScrollPane requestListPane;
+
 
     private JLabel lblTitles;
 
@@ -89,6 +96,16 @@ public class MainUI extends JFrame
     private JTextField tfSearch;
 
     private JLabel lblSched;
+    private JLabel lblRequest;
+
+    private JLabel lblchangeTime;
+    private JTextField tfTime;
+    private JButton btnchangeTime;
+
+    private JLabel lblcourseName;
+    private JTextField tfcourseName;
+    private JButton btncourseName;
+
 
     public MainUI() {
         setTitle("Login");
@@ -125,7 +142,7 @@ public class MainUI extends JFrame
         btnLogin.setBounds(85, 310, 100, 25);
 
         /* Course List Interface */
-
+        btnRefreshRequests = new JButton("Refresh Requests");
         lblUName = new JLabel();
         lblTitles = new JLabel();
         CRNTextField = new JTextField();
@@ -151,16 +168,27 @@ public class MainUI extends JFrame
         cbSearchBy = new JComboBox(searchByStrings);
         tfSearch = new JTextField();
         model3 = new DefaultListModel();
+        model4 = new DefaultListModel();
         schedList = new JList(model3);
         schedListPane = new JScrollPane(schedList);
         lblSched = new JLabel("Schedule:");
+        RequestList = new JList(model4);
+        requestListPane = new JScrollPane(RequestList);
+        lblRequest = new JLabel("Requests:");
+
+        lblchangeTime = new JLabel("Time:");
+        tfTime = new JTextField();
+        btnchangeTime = new JButton("Change Time");
+
+        lblcourseName = new JLabel("Course Name:");
+        tfcourseName = new JTextField();
+        btncourseName = new JButton("Open Course");
 
         coursePanel.add(CRNTextField);
         coursePanel.add(CRNLabel);
         coursePanel.add(lblUName);
         coursePanel.add(lblTitles);
         coursePanel.add(courseListPane);
-        //coursePanel.add(btnMessages);
         coursePanel.add(lblSearch);
         coursePanel.add(cbSearchBy);
         coursePanel.add(btnSearch);
@@ -173,8 +201,13 @@ public class MainUI extends JFrame
         lblTitles.setBounds(15, 205, 600, 25);
         courseListPane.setBounds(10, 230, 720, 200);
         schedListPane.setBounds(15, 530, 250, 200);
+        requestListPane.setBounds(15, 530, 250, 200);
+
         lblSched.setBounds(15, 465, 100, 100);
+        lblRequest.setBounds(15, 465, 100, 100);
+
         btnRefreshSchedule.setBounds(115, 500, 150, 25);
+        btnRefreshRequests.setBounds(115, 500, 150, 25);
 
 
         //btnMessages.setBounds(390, 10, 100, 25);
@@ -183,6 +216,16 @@ public class MainUI extends JFrame
         TimeChangeLabel.setBounds(15, 100, 185, 25);
         TimeChangeTextField.setBounds(200, 100, 150, 25);
         btnTimeChangeRequest.setBounds(360, 100, 185, 25);
+
+
+        lblchangeTime.setBounds(15, 75, 185, 25);
+        tfTime.setBounds(55, 75, 150, 25);
+        btnchangeTime.setBounds(210, 75, 110, 25);
+
+        lblcourseName.setBounds(15, 110, 185, 25);
+        tfcourseName.setBounds(115, 110, 150, 25);
+        btncourseName.setBounds(280, 110, 110, 25);
+
 
         ProfUNameLabel.setBounds(15, 130, 175, 25);
         ProfUNameTextField.setBounds(200, 130, 125, 25);
@@ -204,8 +247,6 @@ public class MainUI extends JFrame
         messageListPane = new JScrollPane(messageList);
         btnCourses = new JButton("Courses");
 
-        messageListPane.setBounds(400, 200, 1200, 330);
-
 
         messagePanel.add(btnCourses);
         messagePanel.add(messageListPane);
@@ -213,7 +254,6 @@ public class MainUI extends JFrame
 
         loginPanel.setBounds(230, 0, 550, 500);
         coursePanel.setBounds(950, 0, 750, 1000);
-        messagePanel.setBounds(1500, 0, 1100, 475);
 
         lblUName.setFont(new Font("sansserif", Font.BOLD, 14));
         lblTitles.setFont(new Font("sansserif", Font.BOLD, 12));
@@ -221,7 +261,6 @@ public class MainUI extends JFrame
 
         add(loginPanel);
         add(coursePanel);
-        add(messagePanel);
 
         setJMenuBar(menuBar);
         setSize(750, 750);
@@ -238,6 +277,8 @@ public class MainUI extends JFrame
         btnCourseRequest.addActionListener(actListener);
         btnSearch.addActionListener(actListener);
         btnRefreshSchedule.addActionListener(actListener);
+        btnRefreshRequests.addActionListener(actListener);
+        btnchangeTime.addActionListener(actListener);
 
         txtUsername.addKeyListener(loginKeyListener);
         txtPassword.addKeyListener(loginKeyListener);
@@ -247,6 +288,15 @@ public class MainUI extends JFrame
 
     public void AddCourseInterface() {
         if (isProfessor) {
+            coursePanel.add(btnRefreshRequests);
+            coursePanel.add(lblRequest);
+            coursePanel.add(requestListPane);
+            coursePanel.add(lblchangeTime);
+            coursePanel.add(tfTime);
+            coursePanel.add(btnchangeTime);
+            coursePanel.add(btncourseName);
+            coursePanel.add(lblcourseName);
+            coursePanel.add(tfcourseName);
 
         }
 
@@ -326,6 +376,8 @@ public class MainUI extends JFrame
                             System.out.println(accountUsername);
                             String accountTitle = userData.getAccess().equals(PreRegProto.UserData.Access.PROFESSOR) ? "Professor" : "Student";
                             System.out.println(accountTitle);
+                            clientSession.start();
+
 
                             if (accountTitle.equals("Student"))
                                 MainUI.isProfessor = false;
@@ -470,9 +522,9 @@ public class MainUI extends JFrame
                             for (PreRegProto.CourseData courseData : courses) {
 
                                 String course = courseData.getCRN() + "   " + courseData.getSectionNumber() +
-                                        "                    " + courseData.getInstructor().getUsername() + "         " +
-                                        courseData.getCourseName() + "  " + courseData.getTime() + "    " + courseData.getClassRoom()
-                                        + "       " + courseData.getCapacity() + "   " + courseData.getMaxCapacity();
+                                        "                    " + courseData.getInstructor().getUsername() + "      " +
+                                        courseData.getCourseName() + "       " + courseData.getTime() + "       " + courseData.getClassRoom()
+                                        + "       " + courseData.getCapacity() + "        " + courseData.getMaxCapacity();
                                 addCourse(course);
 
                             }
@@ -486,7 +538,6 @@ public class MainUI extends JFrame
             }
 
             if (e.getSource().equals(btnRefreshSchedule)) {
-                model3.clear();
                 MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.GET_SCHEDULE_REQUEST);
                 try {
                     clientSession.queueMessage(messageWrapper, new MessageObserver() {
@@ -504,6 +555,75 @@ public class MainUI extends JFrame
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+            }
+//            if(e.getSource().equals(btnRefreshRequests)){ //TODO:Refresh Requests for Professor
+//                //MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.GET_REQUEST_LIST);
+//                try {
+//                    clientSession.queueMessage(messageWrapper, new MessageObserver() {
+//                        @Override
+//                        public void notify(MessageWrapper messageWrapper) {
+//                            model4.clear();
+//                            java.util.List<PreRegProto.CourseData> reqs = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
+//                            //TODO:Request List
+//                            for (PreRegProto.CourseData courseData : reqs) {
+//                                String sched = courseData.getCourseName() + "  " + courseData.getTime(); //TODO: getType and getInfo to print them
+//                                model4.addElement(sched);
+//                            }
+//                        }
+//                    });
+//                } catch (IOException e1) {
+//                    e1.printStackTrace();
+//                }
+//
+//            }
+            if(e.getSource().equals(btnchangeTime)){  //TODO: change course time (by Professor)
+                if (!tfTime.getText().equals("") && isNumeric(CRNTextField.getText())) {
+                    String times = tfTime.getText();
+                    int CRN = Integer.parseInt(CRNTextField.getText().trim());
+                    MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.CHANGE_TIME_REQUEST);
+                    //Change Time message in messageWrapper to send to database for it to execute
+                    PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setCRN(CRN).setTime(times).build();
+                    messageWrapper.setMessage(courseData);
+                    try {
+                        clientSession.queueMessage(messageWrapper, new MessageObserver() {
+                            @Override
+                            public void notify(MessageWrapper messageWrapper) {
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                    UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
+
+                                }
+                            }
+                        });
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+
+            }
+
+            if(e.getSource().equals(btncourseName)){  //TODO: Open course by Professor
+                if (!tfcourseName.getText().equals("")) {
+                    String times = tfcourseName.getText();
+                    MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.CHANGE_TIME_REQUEST);
+                    //Change Time message in messageWrapper to send to database for it to execute
+                    PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setTime(times).build();
+                    messageWrapper.setMessage(courseData);
+                    //TODO:We also need to set a classroom and a CRN at the server. Do it in a simple way, we'll fix it later.
+                    try {
+                        clientSession.queueMessage(messageWrapper, new MessageObserver() {
+                            @Override
+                            public void notify(MessageWrapper messageWrapper) {
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                    UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
+
+                                }
+                            }
+                        });
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+
             }
         }
     };
@@ -536,15 +656,11 @@ public class MainUI extends JFrame
             } else if (isCourseUI) {
                 isCourseUI = !isCourseUI;
                 movement = 3;
-            } else if (isMessageUI) {
-                isMessageUI = !isMessageUI;
-                movement = -3;
             }
 
-            for (int i = 0; i < 315; i++) {
+            for (int i = 0; i < 162; i++) {
                 loginPanel.setLocation(loginPanel.getX() + movement, 0);
                 coursePanel.setLocation(coursePanel.getX() + movement, 0);
-                messagePanel.setLocation(messagePanel.getX() + movement, 0);
 
                 try {
                     Thread.sleep(2);
