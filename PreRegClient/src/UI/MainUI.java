@@ -9,6 +9,7 @@ import com.prereg.base.User;
 import com.prereg.base.data.PreRegProto;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -46,6 +47,7 @@ public class MainUI extends JFrame
 
     /* Course List Interface */
     private JList courseList;
+    private JTable courseTable;
     private JScrollPane courseListPane;
     public JComboBox cbSearchBy;
 
@@ -67,6 +69,8 @@ public class MainUI extends JFrame
     private DefaultListModel model2;
     public DefaultListModel model3;
     public DefaultListModel model4;
+    public DefaultTableModel model5;
+
 
 
     private JList messageList;
@@ -155,8 +159,33 @@ public class MainUI extends JFrame
         btnRefreshSchedule = new JButton("Refresh Schedule");
 
         model = new DefaultListModel();
-        courseList = new JList(model);
-        courseListPane = new JScrollPane(courseList);
+        model5 = new DefaultTableModel(){
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //all cells false
+                return false;
+            }
+        };
+        ;
+
+        model5.addColumn("CRN");
+        model5.addColumn("Section");
+        model5.addColumn("Instructor");
+        model5.addColumn("Course");
+        model5.addColumn("Time");
+        model5.addColumn("Location");
+        model5.addColumn("Active");
+        model5.addColumn("Max.Cap");
+        JTable courseTable = new JTable(model5);
+        
+//        String data[][]={ {"","",""}};
+//        String column[]={"ID","NAME","SALARY"};
+//        courseTable = new JTable(data, column);
+        courseTable.setBounds(10, 230, 720, 200);
+        //courseList = new JList(model);
+        //courseListPane = new JScrollPane(courseList);
+        courseListPane = new JScrollPane(courseTable);
         //btnMessages = new JButton("Messages");
         btnCapacityRequest = new JButton("Capacity Request");
         CourseRequestTextField = new JTextField();
@@ -187,8 +216,9 @@ public class MainUI extends JFrame
         coursePanel.add(CRNTextField);
         coursePanel.add(CRNLabel);
         coursePanel.add(lblUName);
-        coursePanel.add(lblTitles);
+        //coursePanel.add(lblTitles);
         coursePanel.add(courseListPane);
+        //coursePanel.add(courseTable);
         coursePanel.add(lblSearch);
         coursePanel.add(cbSearchBy);
         coursePanel.add(btnSearch);
@@ -198,7 +228,7 @@ public class MainUI extends JFrame
         CRNLabel.setBounds(15, 40, 50, 25);
         CRNTextField.setBounds(50, 40, 75, 25);
         lblUName.setBounds(15, 10, 240, 25);
-        lblTitles.setBounds(15, 205, 600, 25);
+        //lblTitles.setBounds(15, 205, 600, 25);
         courseListPane.setBounds(10, 230, 720, 200);
         schedListPane.setBounds(15, 530, 250, 200);
         requestListPane.setBounds(15, 530, 250, 200);
@@ -344,7 +374,7 @@ public class MainUI extends JFrame
 
     public void addCourse(String s) {
         model.addElement(s);
-    }
+        }
 
     public void login() {
         enableLoginInput(false);
@@ -516,18 +546,31 @@ public class MainUI extends JFrame
                     clientSession.queueMessage(messageWrapper, new MessageObserver() {
                         @Override
                         public void notify(MessageWrapper messageWrapper) {
-                            model.clear();
-                            java.util.List<PreRegProto.CourseData> courses = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
+//                            model.clear();
+//                            java.util.List<PreRegProto.CourseData> courses = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
+//
+//                            for (PreRegProto.CourseData courseData : courses) {
+//
+//                                String course = courseData.getCRN() + "   " + courseData.getSectionNumber() +
+//                                        "                    " + courseData.getInstructor().getUsername() + "      " +
+//                                        courseData.getCourseName() + "       " + courseData.getTime() + "       " + courseData.getClassRoom()
+//                                        + "       " + courseData.getCapacity() + "        " + courseData.getMaxCapacity();
+//                                addCourse(course);
+//
+//                            }
 
-                            for (PreRegProto.CourseData courseData : courses) {
-
-                                String course = courseData.getCRN() + "   " + courseData.getSectionNumber() +
-                                        "                    " + courseData.getInstructor().getUsername() + "      " +
-                                        courseData.getCourseName() + "       " + courseData.getTime() + "       " + courseData.getClassRoom()
-                                        + "       " + courseData.getCapacity() + "        " + courseData.getMaxCapacity();
-                                addCourse(course);
-
+                            if (model5.getRowCount() > 0) {
+                                for (int i = model5.getRowCount() - 1; i > -1; i--) {
+                                    model5.removeRow(i);
+                                }
                             }
+                            java.util.List<PreRegProto.CourseData> courses = ((PreRegProto.CourseList) messageWrapper.getMessage()).getCourseList();
+                            for (PreRegProto.CourseData courseData : courses) {
+                                Object[] course = {courseData.getCRN(),courseData.getSectionNumber(),courseData.getInstructor().getUsername(),
+                                courseData.getCourseName(), courseData.getTime(), courseData.getClassRoom(), courseData.getCapacity(), courseData.getMaxCapacity()};
+                                model5.addRow(course);
+                            }
+                            
 
                         }
                     });
