@@ -193,7 +193,8 @@ public class MainUI extends JFrame
         btnCourseRequest = new JButton("Request Course");
         lblSearch = new JLabel("Search By:");
         btnSearch = new JButton("Search");
-        String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name", "Department"};
+//        String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name", "Department"};
+        String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name"};
         cbSearchBy = new JComboBox(searchByStrings);
         tfSearch = new JTextField();
         model3 = new DefaultListModel();
@@ -539,6 +540,12 @@ public class MainUI extends JFrame
                 PreRegProto.CourseData.Builder queryBuilder = PreRegProto.CourseData.newBuilder();
                 if (cbSearchBy.getSelectedItem().toString().equals("CRN")) {
                     queryBuilder.setCRN(Integer.parseInt(searchTerm));
+                }
+                else if(cbSearchBy.getSelectedItem().toString().equals("Instructor Username")){
+                    queryBuilder.setInstructor(PreRegProto.UserData.newBuilder().setUsername(searchTerm).build());
+                }
+                else if(cbSearchBy.getSelectedItem().toString().equals("Course Name")){
+                    queryBuilder.setCourseName(searchTerm);
                 }
                 PreRegProto.CourseData courseData = queryBuilder.build();
                 messageWrapper.setMessage(courseData);
