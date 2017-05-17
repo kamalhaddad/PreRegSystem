@@ -44,12 +44,15 @@ public class MainUI extends JFrame
 
     private JLabel lblUsername;
     private JLabel lblPassword;
+    private JLabel lblClassRooms;
 
     /* Course List Interface */
     private JList courseList;
     private JTable courseTable;
     private JScrollPane courseListPane;
     public JComboBox cbSearchBy;
+    public JComboBox cbClassRooms;
+
 
     //private JButton btnMessages;
     private JButton btnCourses;
@@ -105,6 +108,8 @@ public class MainUI extends JFrame
     private JLabel lblchangeTime;
     private JTextField tfTime;
     private JButton btnchangeTime;
+    private JButton btnGetClassRooms;
+    private JButton btnSetClassRooms;
 
     private JLabel lblcourseName;
     private JTextField tfcourseName;
@@ -191,11 +196,13 @@ public class MainUI extends JFrame
         CourseRequestTextField = new JTextField();
         CourseRequestLabel = new JLabel("New Course Name (e.g: XXXX 123): ");
         btnCourseRequest = new JButton("Request Course");
+        lblClassRooms = new JLabel("Classrooms:");
         lblSearch = new JLabel("Search By:");
         btnSearch = new JButton("Search");
 //        String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name", "Department"};
         String[] searchByStrings = {"All Courses", "CRN", "Instructor Username", "Course Name"};
         cbSearchBy = new JComboBox(searchByStrings);
+        cbClassRooms = new JComboBox();
         tfSearch = new JTextField();
         model3 = new DefaultListModel();
         model4 = new DefaultListModel();
@@ -208,6 +215,8 @@ public class MainUI extends JFrame
 
         lblchangeTime = new JLabel("Time:");
         tfTime = new JTextField();
+        btnSetClassRooms = new JButton("Set Classroom");
+        btnGetClassRooms = new JButton("Get Classrooms");
         btnchangeTime = new JButton("Change Time");
 
         lblcourseName = new JLabel("Course Name:");
@@ -252,8 +261,13 @@ public class MainUI extends JFrame
         lblchangeTime.setBounds(15, 75, 185, 25);
         tfTime.setBounds(55, 75, 150, 25);
         btnchangeTime.setBounds(210, 75, 110, 25);
+        btnGetClassRooms.setBounds(330,75,150,25);
 
         lblcourseName.setBounds(15, 110, 185, 25);
+        lblClassRooms.setBounds(15,145,185,25);
+        cbClassRooms.setBounds(105,145,185,25);
+        btnSetClassRooms.setBounds(305,145,130,25);
+
         tfcourseName.setBounds(115, 110, 150, 25);
         btncourseName.setBounds(280, 110, 110, 25);
 
@@ -310,6 +324,7 @@ public class MainUI extends JFrame
         btnRefreshSchedule.addActionListener(actListener);
         btnRefreshRequests.addActionListener(actListener);
         btnchangeTime.addActionListener(actListener);
+        btnGetClassRooms.addActionListener(actListener);
 
         txtUsername.addKeyListener(loginKeyListener);
         txtPassword.addKeyListener(loginKeyListener);
@@ -328,6 +343,10 @@ public class MainUI extends JFrame
             coursePanel.add(btncourseName);
             coursePanel.add(lblcourseName);
             coursePanel.add(tfcourseName);
+            coursePanel.add(btnGetClassRooms);
+            coursePanel.add(cbClassRooms);
+            coursePanel.add(lblClassRooms);
+            coursePanel.add(btnSetClassRooms);
 
         }
 
@@ -675,6 +694,33 @@ public class MainUI extends JFrame
                 }
 
             }
+
+            if(e.getSource().equals(btnGetClassRooms)){  //TODO: GET CLASSROOMS
+                if (!tfTime.getText().equals("")) {
+                    String times = tfcourseName.getText();
+                    MessageWrapper messageWrapper = (new PreRegMessageFactory()).createMessage(PreRegMessageFactory.CHANGE_TIME_REQUEST);
+
+                    PreRegProto.CourseData courseData = PreRegProto.CourseData.newBuilder().setTime(times).build();
+                    messageWrapper.setMessage(courseData);
+
+                    //TODO: cbClassRooms addItems
+
+                    try {
+                        clientSession.queueMessage(messageWrapper, new MessageObserver() {
+                            @Override
+                            public void notify(MessageWrapper messageWrapper) {
+                                if (messageWrapper.getMessageType().equals(PreRegMessageFactory.REPLY_MESSAGE)) {
+                                    UICore.showMessageDialog(((PreRegProto.ReplyMessage) messageWrapper.getMessage()).getReplyMessage(), "", JOptionPane.ERROR_MESSAGE);
+
+                                }
+                            }
+                        });
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+
+            }
         }
     };
 
@@ -713,7 +759,7 @@ public class MainUI extends JFrame
                 coursePanel.setLocation(coursePanel.getX() + movement, 0);
 
                 try {
-                    Thread.sleep(2);
+                    Thread.sleep(3);
                 } catch (Exception e) {
                 }
             }
