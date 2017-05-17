@@ -31,7 +31,7 @@ public final class Course {
     }
 
     public String getClassRoom() {
-        return courseData.getClassRoom();
+        return courseData.getClassRoom().getBuilding() + " " + courseData.getClassRoom().getRoomNumber();
     }
 
     public int getCapacity() {

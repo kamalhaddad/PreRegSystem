@@ -47,6 +47,18 @@ public class PreRegMessageFactory extends MessageFactory {
     public static final MessengerProto.MessageType REPLY_MESSAGE =
             MessengerProto.MessageType.newBuilder().setType("REPLY_MESSAGE").build();
 
+    public static final MessengerProto.MessageType ADD_COURSE =
+            MessengerProto.MessageType.newBuilder().setType("ADD_COURSE").build();
+
+    public static final MessengerProto.MessageType UPDATE_COURSE =
+            MessengerProto.MessageType.newBuilder().setType("UPDATE_COURSE").build();
+
+    public static final MessengerProto.MessageType GET_REQUESTS =
+            MessengerProto.MessageType.newBuilder().setType("GET_REQUESTS").build();
+
+    public static final MessengerProto.MessageType GET_REQUESTS_RESPONSE =
+            MessengerProto.MessageType.newBuilder().setType("GET_REQUESTS_RESPONSE").build();
+
     @Override
     public MessageWrapper createMessage(MessengerProto.MessageType messageType) {
         Message message;
@@ -82,6 +94,18 @@ public class PreRegMessageFactory extends MessageFactory {
         }
         else if(messageType.equals(REPLY_MESSAGE)) {
             message = PreRegProto.ReplyMessage.getDefaultInstance();
+        }
+        else if(messageType.equals(ADD_COURSE)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(UPDATE_COURSE)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_REQUESTS)) {
+            message = PreRegProto.CourseRequest.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_REQUESTS_RESPONSE)) {
+            message = PreRegProto.CourseRequestList.getDefaultInstance();
         }
         else {
             return null;

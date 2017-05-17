@@ -31,9 +31,17 @@ message CourseData {
     optional UserData instructor = 3;
     optional string courseName = 4;
     optional string time = 5;
-    optional string classRoom = 6;
+    optional ClassRoomData classRoom = 6;
     optional int32 capacity = 7;
-    optional int32 max_capacity = 8;
+    optional int32 maxCapacity = 8;
+    optional int32 credits = 9;
+}
+
+message ClassRoomData {
+    optional int32 id = 1;
+    optional string building = 2;
+    optional string roomNumber = 3;
+    optional int32 maxCapacity = 4;
 }
 
 message UserList {
@@ -42,6 +50,17 @@ message UserList {
 
 message CourseList {
     repeated CourseData course = 1;
+}
+
+message CourseRequest {
+    optional int32 fromId = 1;
+    optional int32 toId = 2;
+    optional string type = 3;
+    optional string info = 4;
+}
+
+message CourseRequestList {
+    repeated CourseRequest courseRequest = 1;
 }
 
 message EmptyMessage {
