@@ -5090,6 +5090,680 @@ public final class PreRegProto {
     // @@protoc_insertion_point(class_scope:base.UserList)
   }
 
+  public interface ClassRoomListOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // repeated .base.ClassRoomData classRoom = 1;
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData> 
+        getClassRoomList();
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    com.prereg.base.data.PreRegProto.ClassRoomData getClassRoom(int index);
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    int getClassRoomCount();
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    java.util.List<? extends com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder> 
+        getClassRoomOrBuilderList();
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder getClassRoomOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code base.ClassRoomList}
+   */
+  public static final class ClassRoomList extends
+      com.google.protobuf.GeneratedMessage
+      implements ClassRoomListOrBuilder {
+    // Use ClassRoomList.newBuilder() to construct.
+    private ClassRoomList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ClassRoomList(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ClassRoomList defaultInstance;
+    public static ClassRoomList getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ClassRoomList getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClassRoomList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                classRoom_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.ClassRoomData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              classRoom_.add(input.readMessage(com.prereg.base.data.PreRegProto.ClassRoomData.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          classRoom_ = java.util.Collections.unmodifiableList(classRoom_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_ClassRoomList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.prereg.base.data.PreRegProto.internal_static_base_ClassRoomList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.prereg.base.data.PreRegProto.ClassRoomList.class, com.prereg.base.data.PreRegProto.ClassRoomList.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ClassRoomList> PARSER =
+        new com.google.protobuf.AbstractParser<ClassRoomList>() {
+      public ClassRoomList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClassRoomList(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClassRoomList> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .base.ClassRoomData classRoom = 1;
+    public static final int CLASSROOM_FIELD_NUMBER = 1;
+    private java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData> classRoom_;
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    public java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData> getClassRoomList() {
+      return classRoom_;
+    }
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    public java.util.List<? extends com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder> 
+        getClassRoomOrBuilderList() {
+      return classRoom_;
+    }
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    public int getClassRoomCount() {
+      return classRoom_.size();
+    }
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    public com.prereg.base.data.PreRegProto.ClassRoomData getClassRoom(int index) {
+      return classRoom_.get(index);
+    }
+    /**
+     * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+     */
+    public com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder getClassRoomOrBuilder(
+        int index) {
+      return classRoom_.get(index);
+    }
+
+    private void initFields() {
+      classRoom_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < classRoom_.size(); i++) {
+        output.writeMessage(1, classRoom_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < classRoom_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, classRoom_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.prereg.base.data.PreRegProto.ClassRoomList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.prereg.base.data.PreRegProto.ClassRoomList prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code base.ClassRoomList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.prereg.base.data.PreRegProto.ClassRoomListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_ClassRoomList_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_ClassRoomList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.prereg.base.data.PreRegProto.ClassRoomList.class, com.prereg.base.data.PreRegProto.ClassRoomList.Builder.class);
+      }
+
+      // Construct using com.prereg.base.data.PreRegProto.ClassRoomList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getClassRoomFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (classRoomBuilder_ == null) {
+          classRoom_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          classRoomBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.prereg.base.data.PreRegProto.internal_static_base_ClassRoomList_descriptor;
+      }
+
+      public com.prereg.base.data.PreRegProto.ClassRoomList getDefaultInstanceForType() {
+        return com.prereg.base.data.PreRegProto.ClassRoomList.getDefaultInstance();
+      }
+
+      public com.prereg.base.data.PreRegProto.ClassRoomList build() {
+        com.prereg.base.data.PreRegProto.ClassRoomList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.prereg.base.data.PreRegProto.ClassRoomList buildPartial() {
+        com.prereg.base.data.PreRegProto.ClassRoomList result = new com.prereg.base.data.PreRegProto.ClassRoomList(this);
+        int from_bitField0_ = bitField0_;
+        if (classRoomBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            classRoom_ = java.util.Collections.unmodifiableList(classRoom_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.classRoom_ = classRoom_;
+        } else {
+          result.classRoom_ = classRoomBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.prereg.base.data.PreRegProto.ClassRoomList) {
+          return mergeFrom((com.prereg.base.data.PreRegProto.ClassRoomList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.prereg.base.data.PreRegProto.ClassRoomList other) {
+        if (other == com.prereg.base.data.PreRegProto.ClassRoomList.getDefaultInstance()) return this;
+        if (classRoomBuilder_ == null) {
+          if (!other.classRoom_.isEmpty()) {
+            if (classRoom_.isEmpty()) {
+              classRoom_ = other.classRoom_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureClassRoomIsMutable();
+              classRoom_.addAll(other.classRoom_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.classRoom_.isEmpty()) {
+            if (classRoomBuilder_.isEmpty()) {
+              classRoomBuilder_.dispose();
+              classRoomBuilder_ = null;
+              classRoom_ = other.classRoom_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              classRoomBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getClassRoomFieldBuilder() : null;
+            } else {
+              classRoomBuilder_.addAllMessages(other.classRoom_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.prereg.base.data.PreRegProto.ClassRoomList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.prereg.base.data.PreRegProto.ClassRoomList) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .base.ClassRoomData classRoom = 1;
+      private java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData> classRoom_ =
+        java.util.Collections.emptyList();
+      private void ensureClassRoomIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          classRoom_ = new java.util.ArrayList<com.prereg.base.data.PreRegProto.ClassRoomData>(classRoom_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prereg.base.data.PreRegProto.ClassRoomData, com.prereg.base.data.PreRegProto.ClassRoomData.Builder, com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder> classRoomBuilder_;
+
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData> getClassRoomList() {
+        if (classRoomBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(classRoom_);
+        } else {
+          return classRoomBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public int getClassRoomCount() {
+        if (classRoomBuilder_ == null) {
+          return classRoom_.size();
+        } else {
+          return classRoomBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.ClassRoomData getClassRoom(int index) {
+        if (classRoomBuilder_ == null) {
+          return classRoom_.get(index);
+        } else {
+          return classRoomBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder setClassRoom(
+          int index, com.prereg.base.data.PreRegProto.ClassRoomData value) {
+        if (classRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClassRoomIsMutable();
+          classRoom_.set(index, value);
+          onChanged();
+        } else {
+          classRoomBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder setClassRoom(
+          int index, com.prereg.base.data.PreRegProto.ClassRoomData.Builder builderForValue) {
+        if (classRoomBuilder_ == null) {
+          ensureClassRoomIsMutable();
+          classRoom_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          classRoomBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder addClassRoom(com.prereg.base.data.PreRegProto.ClassRoomData value) {
+        if (classRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClassRoomIsMutable();
+          classRoom_.add(value);
+          onChanged();
+        } else {
+          classRoomBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder addClassRoom(
+          int index, com.prereg.base.data.PreRegProto.ClassRoomData value) {
+        if (classRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClassRoomIsMutable();
+          classRoom_.add(index, value);
+          onChanged();
+        } else {
+          classRoomBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder addClassRoom(
+          com.prereg.base.data.PreRegProto.ClassRoomData.Builder builderForValue) {
+        if (classRoomBuilder_ == null) {
+          ensureClassRoomIsMutable();
+          classRoom_.add(builderForValue.build());
+          onChanged();
+        } else {
+          classRoomBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder addClassRoom(
+          int index, com.prereg.base.data.PreRegProto.ClassRoomData.Builder builderForValue) {
+        if (classRoomBuilder_ == null) {
+          ensureClassRoomIsMutable();
+          classRoom_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          classRoomBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder addAllClassRoom(
+          java.lang.Iterable<? extends com.prereg.base.data.PreRegProto.ClassRoomData> values) {
+        if (classRoomBuilder_ == null) {
+          ensureClassRoomIsMutable();
+          super.addAll(values, classRoom_);
+          onChanged();
+        } else {
+          classRoomBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder clearClassRoom() {
+        if (classRoomBuilder_ == null) {
+          classRoom_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          classRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public Builder removeClassRoom(int index) {
+        if (classRoomBuilder_ == null) {
+          ensureClassRoomIsMutable();
+          classRoom_.remove(index);
+          onChanged();
+        } else {
+          classRoomBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.ClassRoomData.Builder getClassRoomBuilder(
+          int index) {
+        return getClassRoomFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder getClassRoomOrBuilder(
+          int index) {
+        if (classRoomBuilder_ == null) {
+          return classRoom_.get(index);  } else {
+          return classRoomBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public java.util.List<? extends com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder> 
+           getClassRoomOrBuilderList() {
+        if (classRoomBuilder_ != null) {
+          return classRoomBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(classRoom_);
+        }
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.ClassRoomData.Builder addClassRoomBuilder() {
+        return getClassRoomFieldBuilder().addBuilder(
+            com.prereg.base.data.PreRegProto.ClassRoomData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public com.prereg.base.data.PreRegProto.ClassRoomData.Builder addClassRoomBuilder(
+          int index) {
+        return getClassRoomFieldBuilder().addBuilder(
+            index, com.prereg.base.data.PreRegProto.ClassRoomData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .base.ClassRoomData classRoom = 1;</code>
+       */
+      public java.util.List<com.prereg.base.data.PreRegProto.ClassRoomData.Builder> 
+           getClassRoomBuilderList() {
+        return getClassRoomFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.prereg.base.data.PreRegProto.ClassRoomData, com.prereg.base.data.PreRegProto.ClassRoomData.Builder, com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder> 
+          getClassRoomFieldBuilder() {
+        if (classRoomBuilder_ == null) {
+          classRoomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.prereg.base.data.PreRegProto.ClassRoomData, com.prereg.base.data.PreRegProto.ClassRoomData.Builder, com.prereg.base.data.PreRegProto.ClassRoomDataOrBuilder>(
+                  classRoom_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          classRoom_ = null;
+        }
+        return classRoomBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:base.ClassRoomList)
+    }
+
+    static {
+      defaultInstance = new ClassRoomList(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:base.ClassRoomList)
+  }
+
   public interface CourseListOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -8046,6 +8720,11 @@ public final class PreRegProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_base_UserList_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_base_ClassRoomList_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_base_ClassRoomList_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_base_CourseList_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -8095,14 +8774,15 @@ public final class PreRegProto {
       "\001(\005\"V\n\rClassRoomData\022\n\n\002id\030\001 \001(\005\022\020\n\010buil" +
       "ding\030\002 \001(\t\022\022\n\nroomNumber\030\003 \001(\t\022\023\n\013maxCap" +
       "acity\030\004 \001(\005\"(\n\010UserList\022\034\n\004user\030\001 \003(\0132\016." +
-      "base.UserData\".\n\nCourseList\022 \n\006course\030\001 " +
-      "\003(\0132\020.base.CourseData\"I\n\rCourseRequest\022\016" +
-      "\n\006fromId\030\001 \001(\005\022\014\n\004toId\030\002 \001(\005\022\014\n\004type\030\003 \001" +
-      "(\t\022\014\n\004info\030\004 \001(\t\"?\n\021CourseRequestList\022*\n",
-      "\rcourseRequest\030\001 \003(\0132\023.base.CourseReques" +
-      "t\"\016\n\014EmptyMessage\"$\n\014ReplyMessage\022\024\n\014rep" +
-      "lyMessage\030\001 \002(\tB#\n\024com.prereg.base.dataB" +
-      "\013PreRegProto"
+      "base.UserData\"7\n\rClassRoomList\022&\n\tclassR" +
+      "oom\030\001 \003(\0132\023.base.ClassRoomData\".\n\nCourse" +
+      "List\022 \n\006course\030\001 \003(\0132\020.base.CourseData\"I" +
+      "\n\rCourseRequest\022\016\n\006fromId\030\001 \001(\005\022\014\n\004toId\030",
+      "\002 \001(\005\022\014\n\004type\030\003 \001(\t\022\014\n\004info\030\004 \001(\t\"?\n\021Cou" +
+      "rseRequestList\022*\n\rcourseRequest\030\001 \003(\0132\023." +
+      "base.CourseRequest\"\016\n\014EmptyMessage\"$\n\014Re" +
+      "plyMessage\022\024\n\014replyMessage\030\001 \002(\tB#\n\024com." +
+      "prereg.base.dataB\013PreRegProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -8145,32 +8825,38 @@ public final class PreRegProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_UserList_descriptor,
               new java.lang.String[] { "User", });
-          internal_static_base_CourseList_descriptor =
+          internal_static_base_ClassRoomList_descriptor =
             getDescriptor().getMessageTypes().get(6);
+          internal_static_base_ClassRoomList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_base_ClassRoomList_descriptor,
+              new java.lang.String[] { "ClassRoom", });
+          internal_static_base_CourseList_descriptor =
+            getDescriptor().getMessageTypes().get(7);
           internal_static_base_CourseList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_CourseList_descriptor,
               new java.lang.String[] { "Course", });
           internal_static_base_CourseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(7);
+            getDescriptor().getMessageTypes().get(8);
           internal_static_base_CourseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_CourseRequest_descriptor,
               new java.lang.String[] { "FromId", "ToId", "Type", "Info", });
           internal_static_base_CourseRequestList_descriptor =
-            getDescriptor().getMessageTypes().get(8);
+            getDescriptor().getMessageTypes().get(9);
           internal_static_base_CourseRequestList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_CourseRequestList_descriptor,
               new java.lang.String[] { "CourseRequest", });
           internal_static_base_EmptyMessage_descriptor =
-            getDescriptor().getMessageTypes().get(9);
+            getDescriptor().getMessageTypes().get(10);
           internal_static_base_EmptyMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_EmptyMessage_descriptor,
               new java.lang.String[] { });
           internal_static_base_ReplyMessage_descriptor =
-            getDescriptor().getMessageTypes().get(10);
+            getDescriptor().getMessageTypes().get(11);
           internal_static_base_ReplyMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_ReplyMessage_descriptor,

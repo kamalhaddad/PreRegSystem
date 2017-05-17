@@ -48,6 +48,10 @@ message UserList {
     repeated UserData user = 1;
 }
 
+message ClassRoomList {
+    repeated ClassRoomData classRoom = 1;
+}
+
 message CourseList {
     repeated CourseData course = 1;
 }

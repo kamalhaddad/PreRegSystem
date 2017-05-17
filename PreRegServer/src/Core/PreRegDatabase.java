@@ -19,7 +19,7 @@ public interface PreRegDatabase {
 
     PreRegProto.CourseList querySchedule(int studentId) throws Exception;
 
-
+    PreRegProto.ClassRoomList queryAvailableClassRooms(PreRegProto.CourseData course) throws Exception;
 
     class PreRegDatabaseException extends Exception {
 

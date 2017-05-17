@@ -17,7 +17,6 @@ public class DummyAuthenticator implements Authenticator {
 
     @Override
     public boolean authenticate(PreRegProto.LoginRequestData loginRequestData) {
-        System.out.println(loginRequestData.getUsername()+" "+loginRequestData.getPassword());
         return true;
     }
 }

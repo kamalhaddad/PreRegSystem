@@ -305,4 +305,36 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
         }
         return requestsList.build();
     }
+
+
+    @Override
+    public PreRegProto.ClassRoomList queryAvailableClassRooms(PreRegProto.CourseData course) throws Exception {
+        Statement statement = databaseConnection.createStatement();
+        String query = "SELECT ID, BUILDING, ROOMNUMBER, MAXCAPACITY FROM CLASSROOMS " +
+                "LEFT JOIN COURSES ON CLASSROOMS.ID = COURSES.CLASSROOM " +
+                "WHERE COURSES.TIME != " + course.getTime();
+
+        ResultSet resultSet = statement.executeQuery(query);
+
+        PreRegProto.ClassRoomList.Builder classRooms = PreRegProto.ClassRoomList.newBuilder();
+
+        while (resultSet.next()) {
+            int ind = 1;
+            int id = resultSet.getInt(ind++);
+            String building = resultSet.getString(ind++);
+            String roomNumber = resultSet.getString(ind++);
+            int maxCapacity = resultSet.getInt(ind++);
+
+            PreRegProto.ClassRoomData.Builder classRoom = PreRegProto.ClassRoomData.newBuilder();
+
+            classRoom.setId(id)
+                    .setBuilding(building)
+                    .setRoomNumber(roomNumber)
+                    .setMaxCapacity(maxCapacity);
+
+            classRooms.addClassRoom(classRoom.build());
+        }
+
+        return classRooms.build();
+    }
 }

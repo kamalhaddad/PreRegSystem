@@ -59,6 +59,12 @@ public class PreRegMessageFactory extends MessageFactory {
     public static final MessengerProto.MessageType GET_REQUESTS_RESPONSE =
             MessengerProto.MessageType.newBuilder().setType("GET_REQUESTS_RESPONSE").build();
 
+    public static final MessengerProto.MessageType GET_AVAILABLE_CLASS_ROOMS =
+            MessengerProto.MessageType.newBuilder().setType("GET_AVAILABLE_CLASS_ROOMS").build();
+
+    public static final MessengerProto.MessageType GET_AVAILABLE_CLASS_ROOMS_RESPONSE =
+            MessengerProto.MessageType.newBuilder().setType("GET_AVAILABLE_CLASS_ROOMS_RESPONSE").build();
+
     @Override
     public MessageWrapper createMessage(MessengerProto.MessageType messageType) {
         Message message;
@@ -106,6 +112,12 @@ public class PreRegMessageFactory extends MessageFactory {
         }
         else if(messageType.equals(GET_REQUESTS_RESPONSE)) {
             message = PreRegProto.CourseRequestList.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_AVAILABLE_CLASS_ROOMS)) {
+            message = PreRegProto.CourseData.getDefaultInstance();
+        }
+        else if(messageType.equals(GET_AVAILABLE_CLASS_ROOMS_RESPONSE)) {
+            message = PreRegProto.ClassRoomList.getDefaultInstance();
         }
         else {
             return null;

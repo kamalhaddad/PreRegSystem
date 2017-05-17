@@ -158,6 +158,18 @@ public class PreRegSession extends Thread {
             responseMessage.setMessage(requests);
             messenger.sendMessage(responseMessage);
         }
+        else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.GET_AVAILABLE_CLASS_ROOMS)) {
+            PreRegProto.CourseRequestList requests = null;
+            try {
+                requests = database.queryCourseRequests(user.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_REQUESTS_RESPONSE);
+            responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
+            responseMessage.setMessage(requests);
+            messenger.sendMessage(responseMessage);
+        }
 
     }
 }
