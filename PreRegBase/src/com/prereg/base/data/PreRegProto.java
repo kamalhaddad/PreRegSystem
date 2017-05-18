@@ -6451,15 +6451,20 @@ public final class PreRegProto {
      */
     int getFromId();
 
-    // optional int32 toId = 2;
+    // optional string toUsername = 2;
     /**
-     * <code>optional int32 toId = 2;</code>
+     * <code>optional string toUsername = 2;</code>
      */
-    boolean hasToId();
+    boolean hasToUsername();
     /**
-     * <code>optional int32 toId = 2;</code>
+     * <code>optional string toUsername = 2;</code>
      */
-    int getToId();
+    java.lang.String getToUsername();
+    /**
+     * <code>optional string toUsername = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getToUsernameBytes();
 
     // optional string type = 3;
     /**
@@ -6547,9 +6552,9 @@ public final class PreRegProto {
               fromId_ = input.readInt32();
               break;
             }
-            case 16: {
+            case 18: {
               bitField0_ |= 0x00000002;
-              toId_ = input.readInt32();
+              toUsername_ = input.readBytes();
               break;
             }
             case 26: {
@@ -6618,20 +6623,47 @@ public final class PreRegProto {
       return fromId_;
     }
 
-    // optional int32 toId = 2;
-    public static final int TOID_FIELD_NUMBER = 2;
-    private int toId_;
+    // optional string toUsername = 2;
+    public static final int TOUSERNAME_FIELD_NUMBER = 2;
+    private java.lang.Object toUsername_;
     /**
-     * <code>optional int32 toId = 2;</code>
+     * <code>optional string toUsername = 2;</code>
      */
-    public boolean hasToId() {
+    public boolean hasToUsername() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional int32 toId = 2;</code>
+     * <code>optional string toUsername = 2;</code>
      */
-    public int getToId() {
-      return toId_;
+    public java.lang.String getToUsername() {
+      java.lang.Object ref = toUsername_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          toUsername_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string toUsername = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getToUsernameBytes() {
+      java.lang.Object ref = toUsername_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toUsername_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     // optional string type = 3;
@@ -6722,7 +6754,7 @@ public final class PreRegProto {
 
     private void initFields() {
       fromId_ = 0;
-      toId_ = 0;
+      toUsername_ = "";
       type_ = "";
       info_ = "";
     }
@@ -6742,7 +6774,7 @@ public final class PreRegProto {
         output.writeInt32(1, fromId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, toId_);
+        output.writeBytes(2, getToUsernameBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getTypeBytes());
@@ -6765,7 +6797,7 @@ public final class PreRegProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, toId_);
+          .computeBytesSize(2, getToUsernameBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -6893,7 +6925,7 @@ public final class PreRegProto {
         super.clear();
         fromId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        toId_ = 0;
+        toUsername_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         type_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6934,7 +6966,7 @@ public final class PreRegProto {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.toId_ = toId_;
+        result.toUsername_ = toUsername_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -6962,8 +6994,10 @@ public final class PreRegProto {
         if (other.hasFromId()) {
           setFromId(other.getFromId());
         }
-        if (other.hasToId()) {
-          setToId(other.getToId());
+        if (other.hasToUsername()) {
+          bitField0_ |= 0x00000002;
+          toUsername_ = other.toUsername_;
+          onChanged();
         }
         if (other.hasType()) {
           bitField0_ |= 0x00000004;
@@ -7035,35 +7069,76 @@ public final class PreRegProto {
         return this;
       }
 
-      // optional int32 toId = 2;
-      private int toId_ ;
+      // optional string toUsername = 2;
+      private java.lang.Object toUsername_ = "";
       /**
-       * <code>optional int32 toId = 2;</code>
+       * <code>optional string toUsername = 2;</code>
        */
-      public boolean hasToId() {
+      public boolean hasToUsername() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional int32 toId = 2;</code>
+       * <code>optional string toUsername = 2;</code>
        */
-      public int getToId() {
-        return toId_;
+      public java.lang.String getToUsername() {
+        java.lang.Object ref = toUsername_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          toUsername_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional int32 toId = 2;</code>
+       * <code>optional string toUsername = 2;</code>
        */
-      public Builder setToId(int value) {
-        bitField0_ |= 0x00000002;
-        toId_ = value;
+      public com.google.protobuf.ByteString
+          getToUsernameBytes() {
+        java.lang.Object ref = toUsername_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          toUsername_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string toUsername = 2;</code>
+       */
+      public Builder setToUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        toUsername_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 toId = 2;</code>
+       * <code>optional string toUsername = 2;</code>
        */
-      public Builder clearToId() {
+      public Builder clearToUsername() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        toId_ = 0;
+        toUsername_ = getDefaultInstance().getToUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string toUsername = 2;</code>
+       */
+      public Builder setToUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        toUsername_ = value;
         onChanged();
         return this;
       }
@@ -8776,13 +8851,13 @@ public final class PreRegProto {
       "acity\030\004 \001(\005\"(\n\010UserList\022\034\n\004user\030\001 \003(\0132\016." +
       "base.UserData\"7\n\rClassRoomList\022&\n\tclassR" +
       "oom\030\001 \003(\0132\023.base.ClassRoomData\".\n\nCourse" +
-      "List\022 \n\006course\030\001 \003(\0132\020.base.CourseData\"I" +
-      "\n\rCourseRequest\022\016\n\006fromId\030\001 \001(\005\022\014\n\004toId\030",
-      "\002 \001(\005\022\014\n\004type\030\003 \001(\t\022\014\n\004info\030\004 \001(\t\"?\n\021Cou" +
-      "rseRequestList\022*\n\rcourseRequest\030\001 \003(\0132\023." +
-      "base.CourseRequest\"\016\n\014EmptyMessage\"$\n\014Re" +
-      "plyMessage\022\024\n\014replyMessage\030\001 \002(\tB#\n\024com." +
-      "prereg.base.dataB\013PreRegProto"
+      "List\022 \n\006course\030\001 \003(\0132\020.base.CourseData\"O" +
+      "\n\rCourseRequest\022\016\n\006fromId\030\001 \001(\005\022\022\n\ntoUse",
+      "rname\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\014\n\004info\030\004 \001(\t\"" +
+      "?\n\021CourseRequestList\022*\n\rcourseRequest\030\001 " +
+      "\003(\0132\023.base.CourseRequest\"\016\n\014EmptyMessage" +
+      "\"$\n\014ReplyMessage\022\024\n\014replyMessage\030\001 \002(\tB#" +
+      "\n\024com.prereg.base.dataB\013PreRegProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -8842,7 +8917,7 @@ public final class PreRegProto {
           internal_static_base_CourseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_base_CourseRequest_descriptor,
-              new java.lang.String[] { "FromId", "ToId", "Type", "Info", });
+              new java.lang.String[] { "FromId", "ToUsername", "Type", "Info", });
           internal_static_base_CourseRequestList_descriptor =
             getDescriptor().getMessageTypes().get(9);
           internal_static_base_CourseRequestList_fieldAccessorTable = new

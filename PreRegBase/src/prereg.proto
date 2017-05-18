@@ -58,7 +58,7 @@ message CourseList {
 
 message CourseRequest {
     optional int32 fromId = 1;
-    optional int32 toId = 2;
+    optional string toUsername = 2;
     optional string type = 3;
     optional string info = 4;
 }

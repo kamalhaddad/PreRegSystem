@@ -149,7 +149,7 @@ public class PreRegSession extends Thread {
         else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.GET_REQUESTS)) {
             PreRegProto.CourseRequestList requests = null;
             try {
-                requests = database.queryCourseRequests(user.getId());
+                requests = database.queryCourseRequests(user.getUsername());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -159,15 +159,15 @@ public class PreRegSession extends Thread {
             messenger.sendMessage(responseMessage);
         }
         else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.GET_AVAILABLE_CLASS_ROOMS)) {
-            PreRegProto.CourseRequestList requests = null;
+            PreRegProto.ClassRoomList classRoomList = null;
             try {
-                requests = database.queryCourseRequests(user.getId());
+                classRoomList = database.queryAvailableClassRooms((PreRegProto.CourseData) messageWrapper.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_REQUESTS_RESPONSE);
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_AVAILABLE_CLASS_ROOMS_RESPONSE);
             responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
-            responseMessage.setMessage(requests);
+            responseMessage.setMessage(classRoomList);
             messenger.sendMessage(responseMessage);
         }
 

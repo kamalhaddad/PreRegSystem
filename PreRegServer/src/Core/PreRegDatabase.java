@@ -15,7 +15,7 @@ public interface PreRegDatabase {
 
     //TODO: needs refactoring (better design of requests)
     void addCourseRequest(PreRegProto.CourseRequest courseRequest) throws Exception;
-    PreRegProto.CourseRequestList queryCourseRequests(int instructorId) throws Exception;
+    PreRegProto.CourseRequestList queryCourseRequests(String instructorUsername) throws Exception;
 
     PreRegProto.CourseList querySchedule(int studentId) throws Exception;
 

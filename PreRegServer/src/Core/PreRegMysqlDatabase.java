@@ -152,7 +152,7 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
                 "FROM REGISTERED_COURSES " +
                 "INNER JOIN COURSES ON REGISTERED_COURSES.CRN=COURSES.CRN " +
                 "LEFT JOIN CLASSROOMS ON COURSES.CLASSROOM=CLASSROOMS.ID " +
-                "LEFT JOIN USERS ON USERS.ID=COURSES.UESRID " +
+                "LEFT JOIN USERS ON USERS.ID=COURSES.INSTRUCTORID " +
                 "WHERE REGISTERED_COURSES.STUDENTID=" + studentId;
 
         ResultSet resultSet = statement.executeQuery(query);
@@ -255,13 +255,13 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
 
     @Override
     public void addCourseRequest(PreRegProto.CourseRequest courseRequest) throws Exception {
-        String query = "INSERT INTO REQUESTS (FROMID, TOID, TYPE, INFO) " +
+        String query = "INSERT INTO REQUESTS (FROMID, TOUSERNAME, TYPE, INFO) " +
                 "VALUES ( ?, ?, ?, ?)";
         PreparedStatement preparedStatement = databaseConnection.prepareStatement(query);
         String type = courseRequest.getType();
         int ind = 1;
         preparedStatement.setInt(ind++, courseRequest.getFromId());
-        preparedStatement.setInt(ind++, courseRequest.getToId());
+        preparedStatement.setString(ind++, courseRequest.getToUsername());
         preparedStatement.setString(ind++, courseRequest.getType());
         if (type.equals(PreRegMessageFactory.CHANGE_TIME_REQUEST.getType())) {
             preparedStatement.setString(ind++, courseRequest.getInfo());
@@ -271,21 +271,22 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
         }
         if (type.equals(PreRegMessageFactory.CAPACITY_REQUEST.getType())) {
             preparedStatement.setString(ind++, courseRequest.getInfo());
+            preparedStatement.execute("INSERT INTO REGISTERED_COURSES (STUDENTID, CRN) VALUES ("+courseRequest.getFromId()+","+ courseRequest.getInfo() +")");
         }
         preparedStatement.executeUpdate();
     }
 
     @Override
-    public PreRegProto.CourseRequestList queryCourseRequests(int instructorId) throws Exception {
+    public PreRegProto.CourseRequestList queryCourseRequests(String instructorUsername) throws Exception {
         Statement statement = databaseConnection.createStatement();
-        String query = "SELECT ID, TOID, FROMID, TYPE, INFO FROM REQUESTS WHERE TOID = " + instructorId;
+        String query = "SELECT ID, TOUSERNAME, FROMID, TYPE, INFO FROM REQUESTS WHERE TOUSERNAME = \"" + instructorUsername + "\"";
         ResultSet resultSet = statement.executeQuery(query);
         PreRegProto.CourseRequestList.Builder requestsList = PreRegProto.CourseRequestList.newBuilder();
 
         while (resultSet.next()) {
             int ind = 1;
             int requestId = resultSet.getInt(ind++);
-            int toId = resultSet.getInt(ind++);
+            String toUsername = resultSet.getString(ind++);
             int fromId = resultSet.getInt(ind++);
             String type = resultSet.getString(ind++);
             String info = resultSet.getString(ind++);
@@ -294,7 +295,7 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
 
             requestBuilder
                     .setFromId(fromId)
-                    .setToId(toId)
+                    .setToUsername(toUsername)
                     .setType(type)
                     .setInfo(info);
 
@@ -310,9 +311,9 @@ public class PreRegMysqlDatabase implements PreRegDatabase {
     @Override
     public PreRegProto.ClassRoomList queryAvailableClassRooms(PreRegProto.CourseData course) throws Exception {
         Statement statement = databaseConnection.createStatement();
-        String query = "SELECT ID, BUILDING, ROOMNUMBER, MAXCAPACITY FROM CLASSROOMS " +
+        String query = "SELECT ID, BUILDING, ROOMNUMBER, CLASSROOMS.MAXCAPACITY FROM CLASSROOMS " +
                 "LEFT JOIN COURSES ON CLASSROOMS.ID = COURSES.CLASSROOM " +
-                "WHERE COURSES.TIME != " + course.getTime();
+                "WHERE COURSES.TIME != \"" + course.getTime() + "\"";
 
         ResultSet resultSet = statement.executeQuery(query);
 

@@ -84,10 +84,10 @@ public class PreRegMessageFactory extends MessageFactory {
             message = PreRegProto.CourseList.getDefaultInstance();
         }
         else if(messageType.equals(OPEN_COURSE_REQUEST)) {
-            message = PreRegProto.CourseData.getDefaultInstance();
+            message = PreRegProto.CourseRequest.getDefaultInstance();
         }
         else if(messageType.equals(CHANGE_TIME_REQUEST)) {
-            message = PreRegProto.CourseData.getDefaultInstance();
+            message = PreRegProto.CourseRequest.getDefaultInstance();
         }
         else if(messageType.equals(GET_SCHEDULE_REQUEST)) {
             message = PreRegProto.EmptyMessage.getDefaultInstance();
@@ -96,7 +96,7 @@ public class PreRegMessageFactory extends MessageFactory {
             message = PreRegProto.CourseList.getDefaultInstance();
         }
         else if(messageType.equals(CAPACITY_REQUEST)) {
-            message = PreRegProto.CourseData.getDefaultInstance();
+            message = PreRegProto.CourseRequest.getDefaultInstance();
         }
         else if(messageType.equals(REPLY_MESSAGE)) {
             message = PreRegProto.ReplyMessage.getDefaultInstance();
