@@ -55,7 +55,7 @@ public class PreRegSession extends Thread {
                         setUsername(loginRequestData.getUsername()).build();
                 PreRegProto.UserList userList = null;
                 try {
-                    userList = database.queryUser(userData);
+                    userList = database.queryUsers(userData);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -82,7 +82,7 @@ public class PreRegSession extends Thread {
         else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.COURSES_SEARCH)) {
             PreRegProto.CourseList courseList = null;
             try {
-                courseList = database.queryCourse((PreRegProto.CourseData) messageWrapper.getMessage());
+                 courseList = database.queryCourses((PreRegProto.CourseData) messageWrapper.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -94,10 +94,8 @@ public class PreRegSession extends Thread {
         else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.CHANGE_TIME_REQUEST)
                 || messageWrapper.getMessageType().equals(PreRegMessageFactory.CAPACITY_REQUEST)
                 || messageWrapper.getMessageType().equals(PreRegMessageFactory.OPEN_COURSE_REQUEST)){
-            //TODO: need some refactoring
-            PreRegProto.CourseData courseData = (PreRegProto.CourseData) messageWrapper.getMessage();
             try {
-                database.addCourseRequest(this.user.getId(),PreRegDatabase.CHANGE_TIME,courseData);
+                database.addCourseRequest((PreRegProto.CourseRequest) messageWrapper.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -118,6 +116,58 @@ public class PreRegSession extends Thread {
             MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_SCHEDULE_RESPONSE);
             responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
             responseMessage.setMessage(schedule);
+            messenger.sendMessage(responseMessage);
+        }
+        else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.ADD_COURSE)) {
+            PreRegProto.CourseData courseData = (PreRegProto.CourseData) messageWrapper.getMessage();
+            try {
+                database.addCourse(courseData);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.REPLY_MESSAGE);
+            PreRegProto.ReplyMessage replyMessage = PreRegProto.ReplyMessage.newBuilder().
+                    setReplyMessage("The course was added successfully!").build();
+            responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
+            responseMessage.setMessage(replyMessage);
+            messenger.sendMessage(responseMessage);
+        }
+        else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.UPDATE_COURSE)) {
+            PreRegProto.CourseData courseData = (PreRegProto.CourseData) messageWrapper.getMessage();
+            try {
+                database.updateCourse(courseData);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.REPLY_MESSAGE);
+            PreRegProto.ReplyMessage replyMessage = PreRegProto.ReplyMessage.newBuilder().
+                    setReplyMessage("The course was updated successfully!").build();
+            responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
+            responseMessage.setMessage(replyMessage);
+            messenger.sendMessage(responseMessage);
+        }
+        else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.GET_REQUESTS)) {
+            PreRegProto.CourseRequestList requests = null;
+            try {
+                requests = database.queryCourseRequests(user.getUsername());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_REQUESTS_RESPONSE);
+            responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
+            responseMessage.setMessage(requests);
+            messenger.sendMessage(responseMessage);
+        }
+        else if (messageWrapper.getMessageType().equals(PreRegMessageFactory.GET_AVAILABLE_CLASS_ROOMS)) {
+            PreRegProto.ClassRoomList classRoomList = null;
+            try {
+                classRoomList = database.queryAvailableClassRooms((PreRegProto.CourseData) messageWrapper.getMessage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            MessageWrapper responseMessage = messageFactory.createMessage(PreRegMessageFactory.GET_AVAILABLE_CLASS_ROOMS_RESPONSE);
+            responseMessage.setMessageCode(PreRegMessageFactory.SUCCESS);
+            responseMessage.setMessage(classRoomList);
             messenger.sendMessage(responseMessage);
         }
 
